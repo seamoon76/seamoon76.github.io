@@ -72,7 +72,7 @@ Coming soon.
     </font> 
     <font size="2">
       <a href="">[paper(coming soon)]</a> / 
-      <a href="">[project(coming soon)]</a> /
+      <a href="">[project(coming soon)]</a>
     </font>
   </p>
 </div>
@@ -108,8 +108,6 @@ Honors & Awards
 * First prize at the provincial level in the 34th China Olympiad in Mathematics 2018
 * Second prize at the provincial level in the 35th China Olympiad in Physics 2018
 * Second prize at the provincial level of the 32nd China Olympiad in Chemistry 2018
-<!-- * Xu Scholarship Nomination (the highest honor in [BIT](https://english.bit.edu.cn/), 20 candidates per year), 2021
-* National Scholarship, 2020 -->
 
 
 <!-- ############## -->
