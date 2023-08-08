@@ -90,7 +90,7 @@ Working Experience
   <font size="4"><b>Xiaomi, Beijing, China</b><br></font> 
   <font size="2">June 2023 - July 2023<br></font> 
   <font size="2">Software Engineer at Xiaomi Technical Committee<br></font>
-  <font size="2"> IoT platform end-side model deployment and development, including embedded platform deployment of intelligent speech dialog system (based on ChatGPT), Nuttx OS end-side application development, etc</font>
+  <font size="2"> IoT platform end-side model deployment and development</font>
 </p>  
 </div>
 
