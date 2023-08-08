@@ -49,7 +49,7 @@ Publications
 Coming soon.
 
 <div>
-  <img style="float: left" src="https://seamoon76.github.io/images/siggraphasia.png" width="175px">
+  <img style="float: left" src="https://seamoon76.github.io/images/siggraphasia.jpg" width="175px">
 </div>
 <div>
   <img style="float: left" src="https://seamoon76.github.io/images/border_row2.png" width="10px">
