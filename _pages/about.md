@@ -29,8 +29,8 @@ News
 Education Experience
 ------
 <div>
-<img style="float: left; width: 75px" src="THU.jpeg">
-<img style="float: left" src="border_row1.png" width="10px">
+<img style="float: left; width: 75px" src="https://seamoon76.github.io/images/THU.jpeg">
+<img style="float: left" src="https://seamoon76.github.io/images/border_row1.png" width="10px">
 <p style="line-height:125%">
   <font size="4"><b>Tsinghua University, Beijing, China</b><br></font> 
   <font size="2">September 2020 - June 2024(expected) <br></font> 
@@ -49,10 +49,10 @@ Publications
 Coming soon.
 
 <div>
-  <img style="float: left" src="siggraphasia.png" width="175px">
+  <img style="float: left" src="https://seamoon76.github.io/images/siggraphasia.png" width="175px">
 </div>
 <div>
-  <img style="float: left" src="border_row2.png" width="10px">
+  <img style="float: left" src="https://seamoon76.github.io/images/border_row2.png" width="10px">
 </div>
 <div>
   <p style="line-height:125%">
@@ -84,8 +84,8 @@ Coming soon.
 Working Experience
 ------
 <div>
-<img style="float: left; width: 75px" src="xiaomi.png">
-<img style="float: left" src="border_row1.png" width="10px">
+<img style="float: left; width: 75px" src="https://seamoon76.github.io/images/xiaomi.png">
+<img style="float: left" src="https://seamoon76.github.io/images/border_row1.png" width="10px">
 <p style="line-height:125%">
   <font size="4"><b>Xiaomi, Beijing, China</b><br></font> 
   <font size="2">June 2023 - July 2023<br></font> 
