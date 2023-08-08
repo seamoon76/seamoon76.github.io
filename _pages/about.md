@@ -8,7 +8,8 @@ redirect_from:
   - /about.html
 ---
 
-I am currently a senior undergraduate student at [Tsinghua University](https://www.tsinghua.edu.cn/en/), working with Prof. [Feng Xu](http://xufeng.site/) at THU.
+I am currently a senior undergraduate student at [Tsinghua University](https://www.tsinghua.edu.cn/en/). I worked closely with Prof. [Feng Xu](http://xufeng.site/) at THU.
+I also collaborated with Prof. [Hai Wan](https://www.thss.tsinghua.edu.cn/en/faculty/haiwan.htm) at THU.
 In 2023, I work with Prof. [Karen Liu](https://tml.stanford.edu/people/karen-liu) at [Stanford University](https://www.stanford.edu/).
 
 My research interests lies at the intersection of computer vision and computer graphics, including optical motion capture, vision/sensor based motion capture, and 3D reconstruction.
@@ -35,6 +36,7 @@ Education Experience
   <font size="4"><b>Tsinghua University, Beijing, China</b><br></font> 
   <font size="2">September 2020 - June 2024(expected) <br></font> 
   <font size="2">B.S. in Software Engineering at <a href="https://www.thss.tsinghua.edu.cn/en/">School of Software</a><br></font>
+  <font size="2"> GPA 3.92/4, ranking 3/92</font>
 </p>  
 </div>
 
@@ -60,7 +62,7 @@ Publications
     </font> 
     <font size="2">
       Shaohua Pan,
-      <b>Qi Ma</b>, Xinyu Yi, Weifeng Hu, Xiong Wang, Xingkang ZHOU, Jijunnan LI,
+      <b>Qi Ma</b>, Xinyu Yi, Weifeng Hu, Xiong Wang, Xingkang Zhou, Jijunnan Li,
       <a href="http://xufeng.site/">Feng Xu</a> 
       <br>
     </font> 
