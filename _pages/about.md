@@ -30,8 +30,8 @@ Education Experience
 ------
 <!-- <img style="float: left; width: 15%" src="..\hyximages\edu\BIT.jpeg"> -->
 <div>
-<img style="float: left; width: 75px" src="../hyximages/edu/THU.jpeg">
-<img style="float: left" src="../hyximages/border_row1.png" width="10px">
+<img style="float: left; width: 75px" src="THU.jpeg">
+<img style="float: left" src="border_row1.png" width="10px">
 <p style="line-height:125%">
   <font size="4"><b>Tsinghua University, Beijing, China</b><br></font> 
   <font size="2">September 2020 - June 2024(expected) <br></font> 
