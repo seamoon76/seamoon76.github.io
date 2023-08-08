@@ -28,7 +28,6 @@ News
 
 Education Experience
 ------
-<!-- <img style="float: left; width: 15%" src="..\hyximages\edu\BIT.jpeg"> -->
 <div>
 <img style="float: left; width: 75px" src="THU.jpeg">
 <img style="float: left" src="border_row1.png" width="10px">
@@ -47,52 +46,53 @@ Education Experience
 Publications
 ------
 
-<!-- <div>
-  <img style="float: left" src="../hyximages/pub/cvpr23-ReflectanceMM.png" width="175px">
+Coming soon.
+
+<div>
+  <img style="float: left" src="siggraphasia.png" width="175px">
 </div>
 <div>
-  <img style="float: left" src="../hyximages/border_row2.png" width="10px">
+  <img style="float: left" src="border_row2.png" width="10px">
 </div>
 <div>
   <p style="line-height:125%">
     <font size="4">
-      <b>Learning a 3D Morphable Face Reflectance Model from Low-cost Data</b>
+      <b>Fusing Monocular Images and Sparse IMU Signals for Real-time Human Motion Capture</b>
       <br>
     </font> 
     <font size="2">
-      <b>Yuxuan Han</b>, 
-      <a href="https://sireer.github.io/">Zhibo Wang</a>,
+      Shaohua Pan,
+      <b>Qi Ma</b>, Xinyu Yi, Weifeng Hu, Xiong Wang, Xingkang ZHOU, Jijunnan LI,
       <a href="http://xufeng.site/">Feng Xu</a> 
       <br>
     </font> 
     <font size="2">
-      IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2023 
+      <b>SIGGRAPH Asia</b>, 2023 
       <br>
     </font> 
     <font size="2">
-      <a href="https://arxiv.org/abs/2303.11686">[paper]</a> / 
-      <a href="../ReflectanceMM/index.html">[project]</a> /
-      <a href="https://github.com/yxuhan/ReflectanceMM">[code]</a>
+      <a href="">[paper(coming soon)]</a> / 
+      <a href="">[project(coming soon)]</a> /
     </font>
   </p>
-</div> -->
+</div>
 
 
 
 <!-- **** -->
 
-Professional Experience
+Working Experience
 ------
-<!-- <div>
-<img style="float: left; width: 75px" src="../hyximages/prof/Microsoft.png">
-<img style="float: left" src="../hyximages/border_row1.png" width="10px">
+<div>
+<img style="float: left; width: 75px" src="xiaomi.png">
+<img style="float: left" src="border_row1.png" width="10px">
 <p style="line-height:125%">
-  <font size="4"><b>Microsoft Research Asia, Beijing, China</b><br></font> 
-  <font size="2">December 2021 - April 2022<br></font> 
-  <font size="2">Research Intern at Internet Graphics Group<br></font>
-  <font size="2"> Mentored by <a href="http://jlyang.org/">Jiaolong Yang</a></font>
+  <font size="4"><b>Xiaomi, Beijing, China</b><br></font> 
+  <font size="2">June 2023 - July 2023<br></font> 
+  <font size="2">Software Engineer at Xiaomi Technical Committee<br></font>
+  <font size="2"> IoT platform end-side model deployment and development, including embedded platform deployment of intelligent speech dialog system (based on ChatGPT), Nuttx OS end-side application development, etc</font>
 </p>  
-</div> -->
+</div>
 
 
 <!-- ############## -->
@@ -101,6 +101,13 @@ Professional Experience
 
 Honors & Awards
 ------
+* Comprehensive Excellence Award (The Boeing Company Scholarship) in Tsinghua University 2022.10
+* Second Prize of National College Students Physics Competition 2021.12
+* Comprehensive Excellence Award (National Inspirational Scholarship) in Tsinghua University 2021.10
+* The 25th Tsinghua ”Sogou Cup” Intelligent Agent Competition Winner Award 2021.5
+* First prize at the provincial level in the 34th China Olympiad in Mathematics 2018
+* Second prize at the provincial level in the 35th China Olympiad in Physics 2018
+* Second prize at the provincial level of the 32nd China Olympiad in Chemistry 2018
 <!-- * Xu Scholarship Nomination (the highest honor in [BIT](https://english.bit.edu.cn/), 20 candidates per year), 2021
 * National Scholarship, 2020 -->
 
