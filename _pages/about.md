@@ -71,8 +71,9 @@ Publications
       <br>
     </font> 
     <font size="2">
-      <a href="">[paper(coming soon)]</a> / 
-      <a href="">[project(coming soon)]</a>
+      <a href="https://arxiv.org/abs/2309.00310">[paper]</a> / 
+      <a href="https://github.com/shaohua-pan/RobustCap">[code]</a> /
+      <a href="https://shaohua-pan.github.io/robustcap-page/">[project]</a>
     </font>
   </p>
 </div>
