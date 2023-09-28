@@ -36,9 +36,10 @@ Education Experience
   <font size="4"><b>Tsinghua University, Beijing, China</b><br></font> 
   <font size="2">September 2020 - June 2024(expected) <br></font> 
   <font size="2">B.S. in Software Engineering at <a href="https://www.thss.tsinghua.edu.cn/en/">School of Software</a><br></font>
-  <font size="2"> GPA 3.92/4, ranking 3/92</font>
+  <font size="2"> GPA 3.92/4, ranking 3/93</font>
 </p>  
 </div>
+
 
 
 <!-- ############## -->
