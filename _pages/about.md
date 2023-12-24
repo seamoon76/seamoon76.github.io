@@ -9,19 +9,18 @@ redirect_from:
 ---
 
 I am currently a senior undergraduate student at [Tsinghua University](https://www.tsinghua.edu.cn/en/). I worked closely with Prof. [Feng Xu](http://xufeng.site/) at THU.
-I also collaborated with Prof. [Hai Wan](https://www.thss.tsinghua.edu.cn/en/faculty/haiwan.htm) at THU.
 In 2023, I work with Prof. [Karen Liu](https://tml.stanford.edu/people/karen-liu) at [Stanford University](https://www.stanford.edu/).
 
-My research interests lies at the intersection of computer vision and computer graphics, including optical motion capture, vision/sensor based motion capture, and 3D reconstruction.
-
+My research interests lies at the intersection of computer vision and computer graphics, including optical motion capture, vision/sensor based motion capture, and character animation.
 
 <!-- ############## -->
 <!-- news -->
 <!-- ############## -->
-<!-- 
+
 News
 ------
-* [2023.8] One paper accepted to SIGGRAPH ASIA'2023. -->
+* [2023.12] I was awarded the [SenseTime](https://www.sensetime.com/cn) Scholarship (no more than 30 people per year).
+* [2023.8] One paper accepted to SIGGRAPH ASIA'2023. 
 
 <!-- ############## -->
 <!-- education -->
@@ -34,11 +33,12 @@ Education Experience
 <img style="float: left" src="https://seamoon76.github.io/images/border_row1.png" width="10px">
 <p style="line-height:125%">
   <font size="4"><b>Tsinghua University, Beijing, China</b><br></font> 
-  <font size="2">September 2020 - June 2024(expected) <br></font> 
+  <font size="2">September 2020 - July 2024(expected) <br></font> 
   <font size="2">B.S. in Software Engineering at <a href="https://www.thss.tsinghua.edu.cn/en/">School of Software</a><br></font>
-  <font size="2"> GPA 3.92/4, ranking 3/93</font>
+  <font size="2"> GPA 3.92/4, ranking 4/91</font>
 </p>  
 </div>
+
 
 
 
@@ -103,6 +103,9 @@ Working Experience
 
 Honors & Awards
 ------
+* [SenseTime Scholarship](https://www.sensetime.com/cn/scholarship) (no more than 30 people per year) 2023.12
+* Science and Technology Innovation Outstanding Scholarship of Tsinghua University 2023.10
+* Third prize in the development track of Tsinghua University 2022 Software Innovation and Creativity Competition 2023.01
 * Comprehensive Excellence Award (The Boeing Company Scholarship) in Tsinghua University 2022.10
 * Second Prize of National College Students Physics Competition 2021.12
 * Comprehensive Excellence Award (National Inspirational Scholarship) in Tsinghua University 2021.10
