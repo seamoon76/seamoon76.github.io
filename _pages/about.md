@@ -19,7 +19,7 @@ My research interests lies at the intersection of computer vision and computer g
 
 News
 ------
-* [2023.12] I was awarded the [SenseTime](https://www.sensetime.com/cn) Scholarship (no more than 30 people per year).
+* [2023.12] I was awarded the [SenseTime](https://www.sensetime.com/cn) Scholarship (30 undergraduates major in AI nationwide per year).
 * [2023.8] One paper accepted to SIGGRAPH ASIA'2023. 
 
 <!-- ############## -->
@@ -103,7 +103,7 @@ Working Experience
 
 Honors & Awards
 ------
-* [SenseTime Scholarship](https://www.sensetime.com/cn/scholarship) (no more than 30 people per year) 2023.12
+* [SenseTime Scholarship](https://www.sensetime.com/cn/scholarship) (30 undergraduates major in AI nationwide per year) 2023.12
 * Science and Technology Innovation Outstanding Scholarship of Tsinghua University 2023.10
 * Third prize in the development track of Tsinghua University 2022 Software Innovation and Creativity Competition 2023.01
 * Comprehensive Excellence Award (The Boeing Company Scholarship) in Tsinghua University 2022.10
