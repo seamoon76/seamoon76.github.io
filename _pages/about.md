@@ -8,8 +8,8 @@ redirect_from:
   - /about.html
 ---
 
-I am currently a senior undergraduate student at [Tsinghua University](https://www.tsinghua.edu.cn/en/). I worked closely with Prof. [Feng Xu](http://xufeng.site/) at THU.
-In 2023, I work with Prof. [Karen Liu](https://tml.stanford.edu/people/karen-liu) at [Stanford University](https://www.stanford.edu/).
+I am a master student at [ETH Zurich](https://ethz.ch/en.html), advised by Prof. [Otmar Hilliges](https://ait.ethz.ch/people/hilliges) and Dr. [Jie Song](https://ait.ethz.ch/people/song). I received my bachelor's degree in 2024 at [Tsinghua University](https://www.tsinghua.edu.cn/en/), adviced by Prof. [Feng Xu](http://xufeng.site/).
+In 2023, I worked with Prof. [Karen Liu](https://tml.stanford.edu/people/karen-liu) at [Stanford University](https://www.stanford.edu/).
 
 My research interests lies at the intersection of computer vision and computer graphics, including optical motion capture, vision/sensor based motion capture, and character animation.
 
@@ -19,6 +19,7 @@ My research interests lies at the intersection of computer vision and computer g
 
 News
 ------
+* [2024.6] I was awarede as the Outstanding Graduates of Tsinghua University(top 2%,highest honor for bachelor's degree graduates of THU).
 * [2023.12] I was awarded the [SenseTime](https://www.sensetime.com/cn) Scholarship (30 undergraduates major in AI nationwide per year).
 * [2023.8] One paper accepted to SIGGRAPH ASIA'2023. 
 
@@ -29,13 +30,23 @@ News
 Education Experience
 ------
 <div>
+<img style="float: left; width: 75px" src="https://seamoon76.github.io/images/ethz_logo_black.png">
+<img style="float: left" src="https://seamoon76.github.io/images/border_row1.png" width="10px">
+<p style="line-height:125%">
+  <font size="4"><b>ETH, Zurich, Switherland</b><br></font> 
+  <font size="2">September 2024 - July 2026(expected) <br></font> 
+  <font size="2">MSc in Computer Science at <a href="https://inf.ethz.ch/">Department of Computer Science</a><br></font>
+  <font size="2"> GPA 3.92/4, ranking 4/91</font>
+</p>  
+</div>
+<div>
 <img style="float: left; width: 75px" src="https://seamoon76.github.io/images/THU.jpeg">
 <img style="float: left" src="https://seamoon76.github.io/images/border_row1.png" width="10px">
 <p style="line-height:125%">
   <font size="4"><b>Tsinghua University, Beijing, China</b><br></font> 
-  <font size="2">September 2020 - July 2024(expected) <br></font> 
+  <font size="2">September 2020 - July 2024 <br></font> 
   <font size="2">B.S. in Software Engineering at <a href="https://www.thss.tsinghua.edu.cn/en/">School of Software</a><br></font>
-  <font size="2"> GPA 3.92/4, ranking 4/91</font>
+  <font size="2"> GPA 3.93/4, ranking 4/91</font>
 </p>  
 </div>
 
