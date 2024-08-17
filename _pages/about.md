@@ -36,7 +36,6 @@ Education Experience
   <font size="4"><b>ETH, Zurich, Switherland</b><br></font> 
   <font size="2">September 2024 - July 2026(expected) <br></font> 
   <font size="2">MSc in Computer Science at <a href="https://inf.ethz.ch/">Department of Computer Science</a><br></font>
-  <font size="2"> GPA 3.92/4, ranking 4/91</font>
 </p>  
 </div>
 <div>
