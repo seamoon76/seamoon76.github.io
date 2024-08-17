@@ -113,7 +113,7 @@ Working Experience
 
 Honors & Awards
 ------
-* Outstanding Graduates of Tsinghua University (top 2%,highest honor for bachelor's degree graduates of THU)
+* Outstanding Graduates of Tsinghua University (top 2%,highest honor for bachelor's degree graduates of THU) 2024.6
 * [SenseTime Scholarship](https://www.sensetime.com/cn/scholarship) (30 undergraduates major in AI nationwide per year) 2023.12
 * Science and Technology Innovation Outstanding Scholarship of Tsinghua University 2023.10
 * Third prize in the development track of Tsinghua University 2022 Software Innovation and Creativity Competition 2023.01
