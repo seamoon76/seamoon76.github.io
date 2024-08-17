@@ -82,11 +82,11 @@ analytics:
 author:
   name             : "Qi Ma"
   avatar           : "me2.jpg"
-  bio              : "Undergraduate @Tsinghua University"
-  location         : "Beijing, China"
+  bio              : "master @ETH Zurich"
+  location         : "Zurich, Switherland"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : #"http://yourfullgooglescholarurl.com"
+  googlescholar    : "https://scholar.google.com/citations?user=rB3mUz0AAAAJ&hl=zh-CN"
   email            : mq19@mails.tsinghua.edu.cn
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
