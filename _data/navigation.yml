@@ -17,6 +17,9 @@ main:
     
   # - title: "CV"
   #   url: /files/cv-en.pdf
+
+  - title: "CG project"
+    url: /files/project/index.html
     
   # - title: "Guide"
   #   url: /markdown/

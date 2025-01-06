@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CG 2024</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="../resources/styles.css" rel="stylesheet" />
+        <link href="../resources/offcanvas.css" rel="stylesheet">
+        <link href="../resources/twentytwenty.css" rel="stylesheet" type="text/css" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        <style>
+            code {
+                background-color: #f5f5f5; /* 浅灰色背景 */
+                border: 1px solid #ddd; /* 灰色边框 */
+                border-radius: 4px; /* 圆角 */
+                padding: 2px 4px; /* 内边距 */
+                font-family: monospace; /* 等宽字体 */
+                font-size: 90%; /* 字体稍小一些 */
+                color: #333; /* 字体颜色 */
+            }
+        </style>
+        <style>
+            .container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 20vh;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
+          </style>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">Computer Graphics 2024 </a>
+            &emsp;
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Heterogeneous Participating Media</div>
+                            <a class="nav-link" href="#Updated Files">Updated Files</a>
+                            <a class="nav-link" href="#Implementation">Implementation</a>
+                            <a class="nav-link" href="#Validation">Validation</a>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-arrow-circle-left"></i></div>
+                                Back
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4" id="Updated Files">Heterogeneous Participating Media</h1>
+                        <p style="color: #555555; font-weight: bold;">Qi Ma</p>
+                        <h2 class="mt-4" id="Updated Files">Updated Files</h2>
+                       <ul>
+                            <li> include/nori/medium.h</li>
+                            <li> include/nori/phase.h</li>
+                            <li> include/nori/volume.h</li>
+                            <li> include/nori/common.h</li>
+                            <li> include/nori/object.h</li>
+                            <li> include/nori/scene.h</li>
+                            <li> include/nori/shape.h</li>
+                            <li> include/nori/scene.cpp</li>
+                            <li> src/parser.cpp</li>
+                            <li> src/homogeneous.cpp</li>
+                            <li> src/heterogeneous.cpp</li>
+                            <li> src/isotropic.cpp</li>
+                            <li> src/henyey_greenstein.cpp</li>
+                            <li> src/vol_path_mis.cpp</li>
+                            <li> src/transparent.cpp</li>
+                            <li> src/vdb_volume_nano.cpp</li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">This feature includes both homogeneous (15 points) and heterogeneous (15 points) participating media. It also serves as the basis for:
+                                </p>
+                                <ul>
+                                    <li>Henyey-Greenstein phase function (5 points).</li>
+                                    <li>Different distance sampling and transmittance estimation methods (10 points).</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+                                    We will first present our implementation of homogeneous and heterogeneous participating media, followed by validation results for both. The implementation of the anisotropic phase function (Henyey-Greenstein) and different distance sampling/transmittance estimation methods (ray marching, delta tracking, ratio tracking) will be shown in the next section.
+                                </p>
+                            </div>
+                        </div>
+
+                        <h2 class="mt-4" id="Implementation">Implementation</h2>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">We followed the PBRT approach and created the following classes:</p>
+                            </div>
+                        </div>
+
+                            <ul>
+                            <li><code>Medium</code> Class: Samples a new free path inside the medium and evaluates the transmittance along the path.</li>
+                            <li><code>PhaseFunction</code> Class: Samples a new direction for the scattering event and evaluates the phase function value for given directions.</li>
+                            <li><code>HomogeneousMedium</code> Class: Inherits from the <code>Medium</code> class and implements homogeneous participating media with constant density.</li>
+                            <li><code>HeterogeneousMedium</code> Class: Inherits from the <code>Medium</code> class and implements heterogeneous participating media with grid-based density.</li>
+                            <li><code>Volume</code> Class: Handles the grid-based density of the heterogeneous medium.</li>
+                            <li><code>MediumShape</code> Class: Allows rendering of the medium within a shape.</li>
+                            <li><code>VolPathMISIntegrator</code> Class: Handles sampling and evaluation of participating media.</li>
+                            </ul>
+
+                        <h3 id="medium-class">Medium Class</h3>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <p class="lead">Following the PBRT implementation, the <code>Medium</code> class has two pure virtual methods: <code>sample</code> and <code>Tr</code>.</p>
+                                </div>
+                            </div>
+                            <ul>
+                            <li><code>sample</code>: Used to sample a new free path inside the medium.</li>
+                            <li><code>Tr</code>: Used to evaluate the transmittance along the path.</li>
+                            </ul>
+
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <p class="lead">
+                                        For homogeneous media, we use the delta tracking algorithm instead of Beer's law to align with Mitsuba's results. For heterogeneous media, we support three distance sampling and transmittance estimation methods: ray marching, delta tracking, and ratio tracking. Detailed implementations will be covered in the next section.</p>
+                                    </div>
+                                </div>
+
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <p class="lead">Key parameters:</p>
+                                </div>
+                            </div>
+
+                            <ul>
+                            <li>\(\sigma_a\): Absorption coefficient.</li>
+                            <li>\(\sigma_s\): Scattering coefficient.</li>
+                            <li>\(\sigma_t\): Attenuation coefficient (\(\sigma_t\) = \(\sigma_a\) + \(\sigma_s\)).</li>
+                            <li>albedo: Ratio of \(\sigma_s\) to \(\sigma_t\).</li>
+                            </ul>
+
+                            <h3 id="volume-class-and-nanovdb">Volume Class and NanoVDB</h3>
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <p class="lead">The homogeneous medium has uniform density throughout, specified in the scene file. In contrast, the heterogeneous medium has varying densities across regions. We introduced a <code>VDBVolume</code> class to handle grid-based density, which can:</p>
+                                    </div>
+                                </div>
+
+                            <ul>
+                            <li>Load density data from nvdb files (NanoVDB format).</li>
+                            <li>Query the density at a specified position.</li>
+                            </ul>
+
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <p class="lead">Although most density files use the vdb format, they can be converted to nvdb using NanoVDB tools. <a href="https://developer.nvidia.com/nanovdb">NanoVDB</a> is a lightweight version of OpenVDB, designed for efficient storage and retrieval of heterogeneous density data.</p>
+                                    </div>
+                                </div>
+                            
+                            <h3 id="medium-in-shapes">Medium in Shapes</h3>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <p class="lead">To support mediums within shapes, we added the <code>MediumShape</code> class. This class:</p>
+                                </div>
+                            </div>
+
+                            <ul>
+                            <li>Defines a bounding box for the medium within the shape.</li>
+                            <li>Maps the shape's bounding box to the nvdb file's bounding box for density queries.</li>
+                            </ul>
+
+                            <h3 id="volumetric-path-tracing">Volumetric Path Tracing</h3>
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <p class="lead">The <code>VolPathMISIntegrator</code> class, derived from the <code>PathMISIntegrator</code> class, was modified to support participating media.</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <p class="lead">
+                                            In the Li method, we first randomly select a medium and sample a new path. 
+                                            If this ray intersects with the medium, we randomly choose a light source and check its visibility from the intersection point. If visible, we calculate the contribution of the light source, considering the transmittance along the path. Then, we use the phase function to sample a new ray, check for intersections with the light source, and update w_mat. If the ray doesn't intersect with any medium, the process is similar to the original <code>PathMISIntegrator</code>,
+                                            except we also consider the medium transmittance along the path.
+                                        </p>
+                                    </div>
+                                </div>
+
+                        <h2 class="mt-4" id="Validation">Validation</h2>
+
+
+                        <h3>Homogeneous Medium</h3>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">We compare our homogeneous medium implementation with Mitsuba. First, we evaluate two extreme cases: full absorption (albedo = 0) and full scattering (albedo = 1).</p>
+                            </div>
+                        </div>
+
+                        <div class="twentytwenty-container">
+                        <img src="ref/homo_full_absorption_mistuba.png" alt="Mitsuba Homogeneous (Full Absorption)" class="img-responsive">
+                        <img src="solution/homo_full_absorption.png" alt="Our Implementation (Full Absorption)" class="img-responsive">
+                        <img src="ref/homo_full_scattering_mistuba.png" alt="Mitsuba Homogeneous (Full Scattering)" class="img-responsive">
+                        <img src="solution/homo_full_scattering.png" alt="Our Implementation (Full Scattering)" class="img-responsive">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+                                    Next, we compare homogeneous medium results within different shapes (cube and sphere) and with various colors (uniform and non-uniform radiance).</p>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Cube parameters:</strong>
+                              <ul>
+                                <li>\(\sigma_a\): (2.0825, 1.6675, 1.25)</li>
+                                <li>\(\sigma_s\): (0.4175, 0.8325, 1.25)</li>
+                                <li>\(\sigma_t\): (2.5, 2.5, 2.5)</li>
+                                <li>Albedo: (0.167, 0.333, 0.5)</li>
+                              </ul>
+                            </li>
+                            <li>Sphere parameters:</strong>
+                              <ul>
+                                <li>\(\sigma_a\): (2, 2, 2)</li>
+                                <li>\(\sigma_s\): (0.5, 0.5, 0.5)</li>
+                                <li>\(\sigma_t\): (2.5, 2.5, 2.5)</li>
+                                <li>Albedo: (0.2, 0.2, 0.2)</li>
+                              </ul>
+                            </li>
+                          </ul>
+
+                        <div class="twentytwenty-container">
+                        <img src="ref/cbox_vol_path_mis_homo_mistuba.png" alt="Mitsuba Homogeneous (Isotropic)" class="img-responsive">
+                        <img src="solution/cbox_vol_path_mis_homo.png" alt="Our Implementation (Isotropic)" class="img-responsive">
+                        </div>
+
+                        <h3>Heterogeneous Medium</h3>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+                                    We utilize .nvdb grid density files, which are compatible with PBRT-v4. Mitsuba, however, uses .vol files. Despite attempting to convert .nvdb or .vdb files to .vol using the <a href="https://github.com/mitsuba-renderer/mitsuba2-vdb-converter">Mitsuba2 VDB Converter</a>, we encountered issues. Therefore, we validate our heterogeneous medium implementation by comparing it with PBRT-v4.</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+                                    We start with the Bunny Cloud .nvdb file from <a href="https://github.com/mmp/pbrt-v4-scenes">PBRT-v4 Scenes</a>, placing it inside a Cornell Box. The original parameter settings are:</p>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>\(\sigma_a\): 0.5</li>
+                            <li>\(\sigma_s\): 10.0</li>
+                        </ul>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+                                    PBRT-v4 specifies wavelength-specific values, while our implementation assumes uniform (\(\sigma_a\)) and (\(\sigma_s\)) for all wavelengths.</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <code> "spectrum \(\sigma_s\)" [200 10 900 10] "spectrum \(\sigma_a\)" [200 .5 900 .5]</code>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+                                    Below are results comparing PBRT-v4, our Henyey-Greenstein (g=0.5), and isotropic phase functions. All images are rendered with 128 SPP and independent sampling.</p>
+                            </div>
+                        </div>
+
+                        <div class="twentytwenty-container">
+                        <img src="ref/hete_bunny_pbrt_128.png" alt="PBRT" class="img-responsive">
+                        <img src="solution/hete_bunny_delta_hg5_big.png" alt="Our Implementation (HG g=0.5)" class="img-responsive">
+                        <img src="solution/hete_bunny_iso_delta.png" alt="Our Implementation (Isotropic)" class="img-responsive">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+                                    Our Henyey-Greenstein results are close to PBRT-v4's output and can show more details of the cloud. Slight color differences may arise from PBRT's use of the null-scattering path integral formulation from  <a href="https://dl.acm.org/doi/10.1145/3306346.3323025">Miller et al.</a>.
+                                    Besides, we do not know how pbrt-v4 will dicide the g factor of Henyey-Greenstein, so we just use g=0.5, which will cause some difference. But our results have shown 
+                                    our implementation's ability to dipict the detailed shape and density of the bunny cloud.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+                        Then we show our results under full scattering and full absorption cases.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="twentytwenty-container">
+                            <img src="solution/hete_bunny_full_absorption.png" alt="Mine(full absorption)" class="img-responsive">
+                            <img src="solution/hete_bunny_full_scattering.png" alt="Mine(full scattering)" class="img-responsive">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+                        Then we show our ability to render the medium within a shape, which can auto-scale the medium to fit the bounding box of the shape and can be placed
+                        at the specified position and rotation.
+                        Below three images are a scaled/rotated/re-positioned box with the bunny cloud medium. The bunny cloud medium is auto-transformed to fit the bounding box of the box shape.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="twentytwenty-container">
+                            <img src="solution/hete_bunny_delta_hg5_big.png" alt="Mine(original)" class="img-responsive">
+                            <img src="solution/hete_bunny_scaled_box.png" alt="Mine(scaled 0.5)" class="img-responsive">
+                            <img src="solution/hete_bunny_rotated_box.png" alt="Mine(rotated)" class="img-responsive">
+                            <img src="solution/hete_bunny_repositioned.png" alt="Mine(re-positioned)" class="img-responsive">
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+                        To show our ability to render the medium in different shapes, we use a sphere shape to hold the bunny cloud medium. The medium ourside the sphere will not be rendered.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="twentytwenty-container">
+                            <img src="solution/hete_bunny_delta_hg5_big.png" alt="Mine(original)" class="img-responsive">
+                            <img src="solution/hete_bunny_sphere.png" alt="Mine(in sphere)" class="img-responsive">
+                            <img src="solution/hete_bunny_sphere_comp_denoised.png" alt="Mine(sphere shape)" class="img-responsive">
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+
+                        Then we show our results with different colors.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="twentytwenty-container">
+                            <img src="solution/hete_bunny_delta_hg5_big.png" alt="Mine(original)" class="img-responsive">
+                            <img src="solution/hete_bunny_color.png" alt="Mine(blue)" class="img-responsive">
+                            <img src="solution/hete_bunny_color2.png" alt="Mine(orange)" class="img-responsive">
+                        </div>
+                    
+                         <h3>Conclusion</h3>
+                         <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+                                    From the validation results, we can conclude that our implementation of homogeneous and heterogeneous participating media is consistent with the reference images generated by Mitsuba and PBRT-v4. 
+                                        Our implementation supports rendering within shapes and using different colors. The Henyey-Greenstein phase function and different distance sampling/transmittance estimation methods will be validated in the next section.
+
+                                </p>
+                            </div>
+                        </div>
+                </main>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/chart-area-demo.js"></script>
+        <script src="../resources/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="../resources/datatables-simple-demo.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="../resources/bootstrap.min.js"></script>
+        <script src="../resources//offcanvas.js"></script>
+        <script src="../resources/jquery.event.move.js"></script>
+        <script src="../resources/jquery.twentytwenty.js"></script>
+        <script>
+            $(window).load(function(){$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.5});});
+        </script>
+    </body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CG 2024</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="../resources/styles.css" rel="stylesheet" />
+        <link href="../resources/offcanvas.css" rel="stylesheet">
+        <link href="../resources/twentytwenty.css" rel="stylesheet" type="text/css" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        <style>
+            code {
+                background-color: #f5f5f5; /* 浅灰色背景 */
+                border: 1px solid #ddd; /* 灰色边框 */
+                border-radius: 4px; /* 圆角 */
+                padding: 2px 4px; /* 内边距 */
+                font-family: monospace; /* 等宽字体 */
+                font-size: 90%; /* 字体稍小一些 */
+                color: #333; /* 字体颜色 */
+            }
+        </style>
+        <style>
+            .container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 20vh;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
+          </style>
+        
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">Computer Graphics 2024 </a>
+            &emsp;
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Different distance sampling and transmittance estimation methods: ray marching, delta tracking and ratio tracking</div>
+                            <a class="nav-link" href="#Updated Files">Updated Files</a>
+                            <a class="nav-link" href="#Implementation">Implementation</a>
+                            <a class="nav-link" href="#Validation">Validation</a>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-arrow-circle-left"></i></div>
+                                Back
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4" id="Updated Files">Different distance sampling and transmittance estimation methods: ray marching, delta tracking and ratio tracking</h1>
+                        <p style="color: #555555; font-weight: bold;">Qi Ma</p>
+                        <h2 class="mt-4" id="Updated Files">Updated Files</h2>
+                        <ul>
+                            <li>src/heterogeneous.cpp</li>
+                        </ul>
+
+                        <h2 class="mt-4" id="Implementation">Implementation</h2>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">We implemented three different distance sampling and transmittance estimation methods for heterogeneous participating media: ray marching, delta tracking, and ratio tracking.
+                                </p>                                    
+                            </div>
+                        </div>
+                        <h3 class="mt-4">Ray Marching</h3>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">Ray marching samples the medium at regular intervals along the ray path. We followed the PBR-book <a href="https://pbr-book.org/3ed-2018/Light_Transport_II_Volume_Rendering/Sampling_Volume_Scattering#eq:heterogeneous-medium-pmed">ray marching formula</a>
+                                    \[
+                                    p_t(t) = \sigma_t(t) e^{-\int_0^t \sigma_t(t') dt'}
+                                    \]
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">The transmittance is calculated by integrating the attenuation coefficient along the ray path. This method has a parameter stepSize to control the sampling interval.
+
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <h3> Delta Tracking</h3>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">Different from Ray Marching, delta tracking and ratio tracking are unbiased methods. Delta tracking is using reject sampling. This methoud adds fictitious particles that do not impact transport,
+                                    and make the combined volume (real + fictitious) homogeneous. It probabilistically reject/accept collisions based on local concentrations of real or fictitious volumes.
+                                    </p>
+                            </div>
+                        </div>
+                        <h3> Ratio Tracking</h3>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead"> Ratio tracking offers an alternative approach to improve the accuracy of transmittance estimation. 
+                                    Instead of immediately terminating transmission, it accumulates the transmittance along the entire path. 
+                                    This is achieved by multiplying the transmittance at each step, 
+                                    calculated as the ratio between the actual extinction coefficient and the majorant extinction coefficient.
+                                    </p>
+                            </div>
+                        </div>
+
+                        <h2 class="mt-4" id="Validation">Validation</h2>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+                                    We compared the three distance sampling and transmittance estimation methods in a simple Cornell box scene with cloud from <a href="https://www.openvdb.org/download/">OpenVDB models</a>.</p>
+                            </div>
+                        </div>
+
+                        <ul>
+                            <li>\(\sigma_a\): 1.0 1.0 1.0</li>
+                            <li>\(\sigma_s\): 4.0 4.0 4.0</li>
+                            <li>spp: 256</li>
+                        </ul>
+
+                        <div class="twentytwenty-container">
+                            <img src="solution/cbox_delta_cloud.png" alt="delta tracking" class="img-responsive">
+                            <img src="solution/cbox_ratio_cloud.png" alt="ratio tracking" class="img-responsive">
+                            <img src="solution/cbox_raymarching_cloud_step_10.png" alt="ray marching" class="img-responsive">
+                        </div>
+
+                        <ul>
+                            <li>\(\sigma_a\): 2.0 2.0 2.0</li>
+                            <li>\(\sigma_s\): 3.0 3.0 3.0</li>
+                            <li>spp: 128</li>
+                        </ul>
+
+                        <div class="twentytwenty-container">
+                            <img src="solution/hete_bunny_delta.png" alt="delta tracking" class="img-responsive">
+                            <img src="solution/hete_bunny_ray_marching.png" alt="ray marching" class="img-responsive">
+                            <img src="solution/hete_bunny_ratio.png" alt="ratio tracking" class="img-responsive">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+                                    From the images above, we can see that the results of ratio tracking are slightly brighter than those of delta tracking, especially in the bunny cloud scene. This may be due to the fact that delta tracking terminates the transmission at a random point determined by Russian roulette, potentially causing the transmittance to be underestimated. 
+
+                                    The results of ray marching are similar to those of ratio tracking but appear unnatural at the edges of the cloud. This is because the ray marching method is a brute-force approach, and the step size is not small enough to capture the details of the cloud accurately.
+
+                                    </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+                                    We also measured the time cost of the three methods in the bunny cloud scene. The results are shown below:
+                                </p>
+                            </div>
+                        </div>
+                        
+
+                        <div class="container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Method</th>
+                                    <th>Time Cost (minutes)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Delta Tracking</td>
+                                    <td>16.3</td>
+                                </tr>
+                                <tr>
+                                    <td>Ray Marching</td>
+                                    <td>11.4</td>
+                                </tr>
+                                <tr>
+                                    <td>Ratio Tracking</td>
+                                    <td>15.9</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+                                    The time costs of the three methods are comparable, but the results of ratio tracking are slightly better than those of delta tracking. 
+                                    Although the ray marching method is faster than the other two methods in this case, this may not always hold true, as its time cost depends on the step size.
+                                    If the step size is reduced, the time cost of ray marching will increase.
+
+                                </p>
+                            </div>
+                        </div>
+
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <p class="lead">
+                                We also compared different step sizes for the ray marching method. As shown in the images below, as the step size decreases, the results become more natural.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="twentytwenty-container">
+                        <img src="solution/cbox_delta_cloud.png" alt="delta tracking" class="img-responsive">
+                        <img src="solution/cbox_raymarching_cloud_step_30.png" alt="ray marching step 30" class="img-responsive">
+                        <img src="solution/cbox_raymarching_cloud_step_10.png" alt="ray marching step 10" class="img-responsive">
+                        <img src="solution/cbox_raymarching_cloud_step_1.png" alt="ray marching step 1" class="img-responsive">
+                    </div>
+                        
+                </main>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/chart-area-demo.js"></script>
+        <script src="../resources/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="../resources/datatables-simple-demo.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="../resources/bootstrap.min.js"></script>
+        <script src="../resources//offcanvas.js"></script>
+        <script src="../resources/jquery.event.move.js"></script>
+        <script src="../resources/jquery.twentytwenty.js"></script>
+        <script>
+            $(window).load(function(){$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.5});});
+        </script>
+    </body>
+</html>

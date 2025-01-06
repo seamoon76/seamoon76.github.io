@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CG 2024</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="../resources/styles.css" rel="stylesheet" />
+        <link href="../resources/offcanvas.css" rel="stylesheet">
+        <link href="../resources/twentytwenty.css" rel="stylesheet" type="text/css" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        <style>
+            code {
+                background-color: #f5f5f5; /* 浅灰色背景 */
+                border: 1px solid #ddd; /* 灰色边框 */
+                border-radius: 4px; /* 圆角 */
+                padding: 2px 4px; /* 内边距 */
+                font-family: monospace; /* 等宽字体 */
+                font-size: 90%; /* 字体稍小一些 */
+                color: #333; /* 字体颜色 */
+            }
+            .filename {
+                font-family: monospace; /* 等宽字体 */
+                font-size: 90%; /* 字体稍小 */
+                color: #333; /* 字体颜色 */
+            }
+        </style>
+        
+
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">Computer Graphics 2024 </a>
+            &emsp;
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Object Instancing</div>
+                            <a class="nav-link" href="#Updated Files">Updated Files</a>
+                            <a class="nav-link" href="#Implementation">Implementation</a>
+                            <a class="nav-link" href="#Validation">Validation</a>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-arrow-circle-left"></i></div>
+                                Back
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Object Instancing</h1>
+                        <p style="color: #555555; font-weight: bold;">Jiayi Sun</p>
+
+                        <h2 class="mt-4" id="Updated Files">Updated Files</h2>
+                        <ul>
+                            <li><span class="filename">include/nori/instance.h</span></li>
+                            <li><span class="filename">include/nori/reference.h</span></li>
+                            <li><span class="filename">src/instance.cpp</span></li>
+                            <li><span class="filename">src/reference.cpp</span></li>
+                            <li><span class="filename">src/scene.cpp</span></li>
+                        </ul>
+
+                        <h2 class="mt-4" id="Implementation">Implementation</h2>
+
+                        <p>For object instancing, I implement it that supports single-object instancing based on a reference shape. The <code>Instance</code> class uses a <code>Reference</code> object as the base geometry, applying transformations only at the instance level. Geometry operations like intersection tests and surface sampling are handled by the reference object, with rays and points transformed to the instance's local frame for calculations and then back to world space. Each instance shares the same reference geometry but can have independent transformations
+                        </p>
+
+                        <h2 class="mt-4" id="Validation">Validation</h2>
+
+                        <p>For validation, I compare the results of object instancing with three separately defined spheres, ensuring that both cases produce identical output images. To further verify the correctness of transformations, I apply textures to the spheres and confirmed that the rotation and alignment were accurate, as the textures appear correctly oriented on the instanced spheres.
+                        </p>
+
+
+                        <div class="twentytwenty-container">
+                            <img src="ref/cbox_no_instance.png" alt="no instance" class="img-responsive">
+                            <img src="solution/cbox_instance.png" alt="instance" class="img-responsive">
+                            <img src="solution/cbox_instance_texture.png" alt="instance with texture" class="img-responsive">
+                        </div>
+
+                        <p>I also test with 20 spheres and observed minimal differences in speed (from 6.8m to 6.6m) and memory usage of the whole Nori process (both are 2.8 GB). This suggests that the performance benefits of instancing may become more noticeable in more complex scenes.
+                        </p>
+
+                        <div class="twentytwenty-container">
+                            <img src="ref/cbox_no_instance_20.png" alt="no instance" class="img-responsive">
+                            <img src="solution/cbox_instance_20.png" alt="instance" class="img-responsive">
+                        </div>
+                    
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/chart-area-demo.js"></script>
+        <script src="../resources/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="../resources/datatables-simple-demo.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="../resources/bootstrap.min.js"></script>
+        <script src="../resources//offcanvas.js"></script>
+        <script src="../resources/jquery.event.move.js"></script>
+        <script src="../resources/jquery.twentytwenty.js"></script>
+        <script>
+            $(window).load(function(){$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.5});});
+        </script>
+    </body>
+</html>

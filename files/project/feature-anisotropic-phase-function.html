@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CG 2024</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="../resources/styles.css" rel="stylesheet" />
+        <link href="../resources/offcanvas.css" rel="stylesheet">
+        <link href="../resources/twentytwenty.css" rel="stylesheet" type="text/css" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        <style>
+            code {
+                background-color: #f5f5f5; /* 浅灰色背景 */
+                border: 1px solid #ddd; /* 灰色边框 */
+                border-radius: 4px; /* 圆角 */
+                padding: 2px 4px; /* 内边距 */
+                font-family: monospace; /* 等宽字体 */
+                font-size: 90%; /* 字体稍小一些 */
+                color: #333; /* 字体颜色 */
+            }
+        </style>
+        <style>
+            .container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 20vh;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
+            .myplayer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+          </style>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">Computer Graphics 2024 </a>
+            &emsp;
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Anisotropic Phase Function: henyey-greenstein function</div>
+                            <a class="nav-link" href="#Updated Files">Updated Files</a>
+                            <a class="nav-link" href="#Implementation">Implementation</a>
+                            <a class="nav-link" href="#Validation">Validation</a>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-arrow-circle-left"></i></div>
+                                Back
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4" id="Updated Files">Anisotropic Phase Function: henyey-greenstein function</h1>
+                        <p style="color: #555555; font-weight: bold;">Qi Ma</p>
+                        <h2 class="mt-4" id="Updated Files">Updated Files</h2>
+                        <ul>
+                            <li>include/nori/phase.h</li>
+                            <li>include/nori/warp.h</li>
+                            <li>src/henyey_greenstein.cpp</li>
+                            <li>src/isotropic.cpp</li>
+                            <li>src/warp.cpp</li>
+                            <li>src/warptest.cpp</li>
+                          </ul>
+
+                        <h2 class="mt-4" id="Implementation">Implementation</h2>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">We implemented the naive isotropic phase function and the Henyey-Greenstein phase function. The Henyey-Greenstein phase function is an anisotropic phase function that models the scattering of light in a specific direction. 
+
+                                </p>
+                                \[P(\theta) = \frac{1}{4\pi} \frac{1 - g^2}{(1 + g^2 - 2g \cos\theta)^{3/2}}\]
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">where:</p>
+                                <ul>
+                                    <li>\(g\) is the anisotropy parameter</li>
+                                    <li>\(\theta\) is the angle between the incident and scattered light directions</li>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">To implement the Henyey-Greenstein phase function, we created a <code>PhaseFunction</code> class and derived class: <code>HenyeyGreenstein</code>. The <code>HenyeyGreenstein</code> class receive the asymmetry parameter \( g \) as input.
+                                    Its core functionality is in the <code>sample</code> method, which samples a new direction based on the Henyey-Greenstein phase function. The <code>pdf</code> method returns the probability density function value.
+                                    </p>
+                            </div>
+                        </div>
+
+
+                        <h2 class="mt-4" id="Validation">Validation</h2>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">We compared the Henyey-Greenstein phase function with the isotropic phase function in a simple Cornell box scene. The results show that the Henyey-Greenstein phase function improves rendering quality in a heterogeneous medium.</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">Examining the light-facing and backlit sides of the bunny cloud, we observe that when <code>g &gt; 0</code>, the light-facing side appears brighter than the backlit side. This result aligns with expectations, as the Henyey-Greenstein phase function causes more light to scatter forward when <code>g &gt; 0</code>.</p>
+                            </div>
+                        </div>
+
+                        <div class="twentytwenty-container">
+                        <img src="solution/cbox_vol_path_mis_homo.png" alt="Mine Homogeneous (Isotropic)" class="img-responsive">
+                        <img src="solution/cbox_vol_path_mis_hg_p0.5.png" alt="Mine Homogeneous HG ( g=0.5 )" class="img-responsive">
+                        <img src="solution/hete_bunny_iso_delta.png" alt="Mine Heterogeneous (Isotropic)" class="img-responsive">
+                        <img src="solution/hete_bunny_delta_hg5_big.png" alt="Mine Heterogeneous (HG g=0.5 )" class="img-responsive">
+                        </div>
+
+                        <h3>Comparison with Mitsuba Results</h3>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">We compared our results with those generated using Mitsuba. Due to limitations in converting the VDB file format to the VOL file format, we were unable to perform a direct comparison in the heterogeneous medium using the Henyey-Greenstein phase function. Instead, we evaluated results in a homogeneous medium with <code>g = 0.5</code> and <code>g = -0.5</code> at 256 samples per pixel (SPP).</p>
+                            </div>
+                        </div>
+
+                        <div class="twentytwenty-container">
+                        <img src="ref/cbox_vol_path_mis_homo_hg5_mistuba.png" alt="Mitsuba Homogeneous HG ( g=0.5 )" class="img-responsive">
+                        <img src="solution/cbox_vol_path_mis_hg_p0.5.png" alt="Mine Homogeneous HG ( g=0.5 )" class="img-responsive">
+                        <img src="ref/cbox_vol_path_mis_homo_hg_m5_mistuba.png" alt="Mitsuba Homogeneous HG ( g=-0.5 )" class="img-responsive">
+                        <img src="solution/cbox_vol_path_mis_hg_m0.5.png" alt="Mine Homogeneous HG ( g=-0.5 )" class="img-responsive">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+                                    Our results are slightly brighter than those from Mitsuba when <code>|g| &gt; 0</code>, though we have not identified the exact cause of this discrepancy. I believe my implementation faithfully follows the Henyey-Greenstein formula and adheres to the implementation details provided in the <a href="https://pbr-book.org/3ed-2018/Volume_Scattering/Phase_Functions">pbr-book Phase Functions</a>.</p>
+
+                            </div>
+                        </div>
+
+                        <h3>Validation with Sampling Warptest</h3>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">To validate the correctness of our Henyey-Greenstein sampling implementation, we conducted a warptest. In the video below, as <code>g</code> transitions from -1 to 1, the sampled points shift from a backward-centered distribution to a forward-centered distribution, consistent with the expected behavior.</p>
+                            </div>
+                        </div>
+                        <div class="myplayer">
+                        <div class="row">
+                            <div class="col-md-8 offset-md-2">
+                            <video width="640" height="480" controls>
+                                <source src="solution/HG-warptest.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/chart-area-demo.js"></script>
+        <script src="../resources/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="../resources/datatables-simple-demo.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="../resources/bootstrap.min.js"></script>
+        <script src="../resources//offcanvas.js"></script>
+        <script src="../resources/jquery.event.move.js"></script>
+        <script src="../resources/jquery.twentytwenty.js"></script>
+        <script>
+            $(window).load(function(){$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.5});});
+        </script>
+    </body>
+</html>

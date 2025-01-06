@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CG 2024</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="../resources/styles.css" rel="stylesheet" />
+        <link href="../resources/offcanvas.css" rel="stylesheet">
+        <link href="../resources/twentytwenty.css" rel="stylesheet" type="text/css" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        <style>
+            code {
+                background-color: #f5f5f5; /* 浅灰色背景 */
+                border: 1px solid #ddd; /* 灰色边框 */
+                border-radius: 4px; /* 圆角 */
+                padding: 2px 4px; /* 内边距 */
+                font-family: monospace; /* 等宽字体 */
+                font-size: 90%; /* 字体稍小一些 */
+                color: #333; /* 字体颜色 */
+            }
+            .filename {
+                font-family: monospace; /* 等宽字体 */
+                font-size: 90%; /* 字体稍小 */
+                color: #333; /* 字体颜色 */
+            }
+            .img-warp {
+                width: auto;          /* 宽度自动，根据高度调整 */
+                height: auto;         /* 高度自动，按比例缩放 */
+                max-width: 80%;      /* 最大宽度不能超过父容器 */
+                max-height: 100%;     /* 最大高度不能超过父容器 */
+                display: block;       /* 避免多余的空白 */
+                margin: 0 auto;       /* 居中显示 */
+            }
+        </style>
+
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">Computer Graphics 2024 </a>
+            &emsp;
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Disney BSDF</div>
+                            <a class="nav-link" href="#Updated Files">Updated Files</a>
+                            <a class="nav-link" href="#Implementation">Implementation</a>
+                            <a class="nav-link" href="#Validation">Validation</a>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-arrow-circle-left"></i></div>
+                                Back
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Disney BSDF</h1>
+                        <p style="color: #555555; font-weight: bold;">Jiayi Sun</p>
+
+                        <h2 class="mt-4" id="Updated Files">Updated Files</h2>
+                        <ul>
+                            <li><span class="filename">include/nori/warp.h</span></li>
+                            <li><span class="filename">src/warp.cpp</span></li>
+                            <li><span class="filename">src/disney.cpp</span></li>
+                        </ul>
+
+                        <h2 class="mt-4" id="Implementation">Implementation</h2>
+
+                        <p>The Disney BSDF uses a combination of physically-based shading terms to represent a wide variety of materials. The 5 graded parameters we implement are subsurface, metallic, roughness, sheen and clearcoat. We also implement specular, specular tint, sheen tint and clearcoat gloss.
+                            We follow the <a href="https://media.disneyanimation.com/uploads/production/publication_asset/48/asset/s2012_pbs_disney_brdf_notes_v3.pdf">2012 version paper</a> as well as <a href="https://cseweb.ucsd.edu/~tzli/cse272/wi2023/homework1.pdf"> UCSD tutorial</a>, which provides a more detailed explanation of the Disney BSDF model in our implementation.
+                        </p>
+
+                        <p>The diffuse component uses Lambertian reflection combined with a roughness-dependent correction term, where <code>F_D90()</code> and <code>F_D()</code> compute reflectance based on Schlick's Fresnel approximation, while subsurface scattering is modeled using <code>F_SS()</code> and blended with <code>lerp()</code> for light penetration effects. 
+                            The metallic component employs a microfacet BRDF with roughness, using the GTR2 distribution in <code>D_m()</code>, the Smith masking-shadowing function (<code>Lambda_w()</code> and <code>G_m()</code>), and Fresnel reflectance (<code>F_m_hat()</code>), which blends base color for dielectric and metallic materials. 
+                            The specular term is embedded in the metallic and dielectric reflectance calculation using Fresnel's approximation.
+                            The sheen component adds soft highlights for fabric-like surfaces, using Schlick's weight function and a sheen tint derived from the base color. 
+                            The clearcoat component introduces a glossy top layer modeled with the GTR1 distribution in <code>D_c()</code>, combined with masking-shadowing (<code>G_c()</code>) and a fixed-index Fresnel term (<code>F_c()</code>). 
+                            </p>
+
+                        
+                        <p>Sampling is performed by blending three distributions—diffuse, metal, and clearcoat—using weights derived from material parameters, with importance sampling handled by <code>Warp::squareToCosineHemisphere</code>, <code>Warp::squareToGTR2</code>, and <code>Warp::squareToGTR1</code> for each component.  </p>
+
+                        <p>The final BSDF combines these terms into a single model, balancing diffuse, metallic, sheen, and clearcoat contributions based on user-defined parameters:
+                        </p>
+
+                        \[
+                        \begin{aligned}
+                        f_{\text{disney}} = & \, (1 - m_{\text{metallic}}) \cdot f_{\text{diffuse}} \\
+                        & + (1 - m_{\text{metallic}}) \cdot m_{\text{sheen}} \cdot f_{\text{sheen}} \\
+                        & + f_{\text{metal}} \\
+                        & + 0.25 \cdot m_{\text{clearcoat}} \cdot f_{\text{clearcoat}}
+                        \end{aligned}
+                        \]
+
+                        <h2 class="mt-4" id="Validation">Validation</h2>
+
+                        <p>We display 5 rows of spheres, where each row tests one specific parameter of the Disney BSDF. From top to bottom the parameters are metallic, subsurface, roughness, sheen and clearcoat. The chosen parameter is linearly interpolated from 0 to 1 across the spheres in the row from left to right, while all other parameters are held constant at their default values. 
+                            The scene is illuminated by an area light positioned above the center sphere (6th sphere), ensuring consistent and focused lighting.
+                            </p>
+
+                            <div class="twentytwenty-container">
+                                <img src="solution/disney_nori_metallic.png" alt="Metallic" class="img-responsive">
+                            </div>
+                            
+                            <div class="twentytwenty-container">
+                                <img src="solution/disney_nori_subsurface.png" alt="Subsurface" class="img-responsive">
+                            </div>
+                            
+                            <div class="twentytwenty-container">
+                                <img src="solution/disney_nori_roughness.png" alt="Roughness" class="img-responsive">
+                            </div>
+                            
+                            <div class="twentytwenty-container">
+                                <img src="solution/disney_nori_sheen.png" alt="Sheen" class="img-responsive">
+                            </div>
+                            
+                            <div class="twentytwenty-container">
+                                <img src="solution/disney_nori_clearcoat.png" alt="Clearcoat" class="img-responsive">
+                            </div>
+
+
+                        <p>The difference caused by the <b>sheen</b> parameter is very subtle in the initial validation setup. We provide additional comparisons between <code>sheen = 0</code> and <code>sheen = 1</code> under identical conditions.
+                            It can be seen that when <code>sheen = 1</code>, the micro highlights become more prominent and spread out, giving the surface a softer, fabric-like appearance.
+                        </p>
+
+                        <div class="twentytwenty-container">
+                            <img src="solution/disney_nori_sheen_0.png" alt="Sheen = 0" class="img-responsive">
+                            <img src="solution/disney_nori_sheen_1.png" alt="Sheen = 1" class="img-responsive">
+                        </div>
+
+                        <p>The comparison for the <b>clearcoat</b> parameter shows that its effect is subtle due to the 0.25 scaling factor applied in the final term. As a result, we also do the same comparison to clearcoat parameter. When <code>clearcoat = 1</code>, the surface becomes more glossy and reflective.
+                        </p>
+
+                        <div class="twentytwenty-container">
+                            <img src="solution/disney_nori_clearcoat_0.png" alt="Clearcoat = 0" class="img-responsive">
+                            <img src="solution/disney_nori_clearcoat_1.png" alt="Clearcoat = 1" class="img-responsive">
+                        </div>
+
+                        <p>The metallic and clearcoat lobes use the GTR1 and GTR2 distributions in their respective
+                            D-terms. We test these distributions with the warptest program to ensure that the sampling procedures match their respective PDFs.
+                            </p>
+
+                        <p>Screenshots from warptest confirm accurate sampling for both GTR1 and GTR2 distributions. Here we use <code>alpha = 0.1</code> and <code>alpha = 0.9</code> for both distributions.
+                        </p>
+
+                        <h5>GTR1</h5>
+
+                        <p>alpha = 0.1:</p>
+
+                        <div class="image-container">
+                            <img src="warptest/gtr1_0.1_1.png" alt="" class="img-warp">
+                        </div>
+                        
+                        <div>
+                            <img src="warptest/gtr1_0.1_2.png" alt="" class="img-warp">
+                        </div>
+
+                        <p>alpha = 0.9:</p>
+
+                        <div>
+                            <img src="warptest/gtr1_0.9_1.png" alt="" class="img-warp">
+                        </div>
+                        
+                        <div>
+                            <img src="warptest/gtr1_0.9_2.png" alt="" class="img-warp">
+                        </div>
+
+                        <h5>GTR2</h5>
+
+                        <p>alpha = 0.1:</p>
+
+                        <div>
+                            <img src="warptest/gtr2_0.9_1.png" alt="" class="img-warp">
+                        </div>
+                        
+                        <div>
+                            <img src="warptest/gtr2_0.9_2.png" alt="" class="img-warp">
+                        </div>
+
+                        <p>alpha = 0.9:</p>
+
+                        <div>
+                            <img src="warptest/gtr2_0.1_1.png" alt="" class="img-warp">
+                        </div>
+                        
+                        <div>
+                            <img src="warptest/gtr2_0.1_2.png" alt="" class="img-warp">
+                        </div>
+
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/chart-area-demo.js"></script>
+        <script src="../resources/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="../resources/datatables-simple-demo.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="../resources/bootstrap.min.js"></script>
+        <script src="../resources//offcanvas.js"></script>
+        <script src="../resources/jquery.event.move.js"></script>
+        <script src="../resources/jquery.twentytwenty.js"></script>
+        <script>
+            $(window).load(function(){$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.5});});
+        </script>
+    </body>
+</html>

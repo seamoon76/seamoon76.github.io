@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CG 2024</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="../resources/styles.css" rel="stylesheet" />
+        <link href="../resources/offcanvas.css" rel="stylesheet">
+        <link href="../resources/twentytwenty.css" rel="stylesheet" type="text/css" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">Computer Graphics 2024 </a>
+            &emsp;
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Modeling Meshes</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-arrow-circle-left"></i></div>
+                                Back
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Modeling Meshes</h1>
+                        <p style="color: #555555; font-weight: bold;">Jiayi Sun</p>
+
+                        <p>To render our final image, we performed mesh modeling for multiple objects, including the window frame, table, hourglass, iceberg, and the water beneath the iceberg. We used an excellent indoor scene from <a href="https://www.blendswap.com/blend/12725">Blendswap</a> as the background. Most of our mesh modeling was editted on existing models.</p>
+
+                        <p>For the table and window frame, some of their normals were inverted, causing black shading during rendering. We enabled the overlay in Blender to display face orientation and flipped the normals for the problematic faces.</p>
+
+                        <div class="twentytwenty-container">
+                            <img src="blender/normal.png" alt="Face Orientation" class="img-responsive">
+                        </div>
+
+                        <p>For the <a href="https://sketchfab.com/3d-models/hourglass-a453e90d47b74260b5e5ccd5a965fe3e">hourglass</a> model, we separated its components into the frame, inner glass, outer glass, and sand as we would give them different BSDF or textures. The sand was then deleted to obtain a blank hourglass for placing iceberg and buildings.</p>
+
+                        <div class="twentytwenty-container">
+                            <img src="blender/hourlgass.png" alt="Hourglass Seperation" class="img-responsive">
+                        </div>
+
+                        <p>For the iceberg, we extracted it from an <a href="https://taobao.com">Arctic scene</a> and filled the bottom with smooth faces. As for the water beneath the iceberg, we selected the lower half of the inner glass of the hourglass, duplicated the faces, and closed the surface using extrusion, scaling and filling operations. We further adjusted the scale and position to ensure no clipping occurs in the final scene.</p>
+
+                        <div class="twentytwenty-container">
+                            <img src="blender/water.png" alt="Water Modelling from Hourglass" class="img-responsive">
+                        </div>
+
+                        <p>We also scaled and moved multiple objects in Blender to achieve better angles. Then we exported them as OBJ files. This process also included adding the camera and lighting in Blender to refine the scene setup. This method freed us from calculating transformation matrices manually in the XML file.</p>
+                        
+                        <div class="twentytwenty-container">
+                            <img src="blender/scale.png" alt="Scale and Position" class="img-responsive">
+                        </div>
+
+                        <p>For the environment map emitter, we used world lighting in Blender and mapped texture coordinates to the HDRI map. By rotating the HDRI, we positioned the crane to appear right outside the window. The resulting angle was then applied in the Nori XML configuration.</p>
+
+                        <div class="twentytwenty-container">
+                            <img src="blender/envmap.png" alt="Environment Map Rotation" class="img-responsive">
+                        </div>
+
+                        <p>We added a plugin to Blender called <a href="https://github.com/mitsuba-renderer/mitsuba-blender">Mitsuba Blender Add-on</a> to export the current scene configuration as a Mitsuba XML file. Since Mitsuba's XML format is quite similar to Nori's, this allowed us to quickly generate a rough configuration file for further adjustments.</p>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/chart-area-demo.js"></script>
+        <script src="../resources/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="../resources/datatables-simple-demo.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="../resources/bootstrap.min.js"></script>
+        <script src="../resources//offcanvas.js"></script>
+        <script src="../resources/jquery.event.move.js"></script>
+        <script src="../resources/jquery.twentytwenty.js"></script>
+        <script>
+            $(window).load(function(){$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.5});});
+        </script>
+    </body>
+</html>

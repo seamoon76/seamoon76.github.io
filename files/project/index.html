@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CG 2024</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="../resources/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <style>
+            .img-motivation {
+                width: auto;          /* 宽度自动，根据高度调整 */
+                height: auto;         /* 高度自动，按比例缩放 */
+                max-width: 50%;     /* 最大高度不能超过父容器 */
+                display: block;       /* 避免多余的空白 */
+                margin: 0 auto;       /* 居中显示 */
+            }
+        </style>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">Computer Graphics 2024 </a>
+            &emsp;
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Intro</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Overview
+                            </a>
+                            <div class="sb-sidenav-menu-heading">Group Members</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseJenny" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                Qi Ma
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseJenny" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="feature-directional-light.html">Simple Extra Emitters: Directional Light</a>
+                                </nav>
+                            </div>
+                            <div class="collapse" id="collapseJenny" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="feature-nl-means.html">Simple Denoising: NL-means denoising</a>
+                                </nav>
+                            </div>
+                            <div class="collapse" id="collapseJenny" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="feature-heterogeneous.html">Heterogeneous Participating Media</a>
+                                </nav>
+                            </div>
+                            <div class="collapse" id="collapseJenny" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="feature-different-distance-sampling.html">Different distance sampling and transmittance estimation methods</a>
+                                </nav>
+                            </div>
+                            
+                            <div class="collapse" id="collapseJenny" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="feature-anisotropic-phase-function.html">Anisotropic Phase Function</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDano" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                Jiayi Sun
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseDano" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="feature-image-as-texture.html">Images as Textures</a>
+                                </nav>
+                            </div>
+                            <div class="collapse" id="collapseDano" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="feature-modeling-meshes.html">Modeling Meshes</a>
+                                </nav>
+                            </div>
+                            <div class="collapse" id="collapseDano" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="feature-stratified-sampling.html">Stratified Sampling</a>
+                                </nav>
+                            </div>
+                            <div class="collapse" id="collapseDano" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="feature-object-instancing.html">Object Instancing</a>
+                                </nav>
+                            </div>
+                            <div class="collapse" id="collapseDano" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="feature-envmap.html">Environment Map Emitter</a>
+                                </nav>
+                            </div>
+                            <div class="collapse" id="collapseDano" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="feature-disney.html">Disney BSDF</a>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Rendering Competition</div>
+                            <a class="nav-link" href="project-rc.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-birthday-cake"></i></div>
+                                RC Submission
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Welcome to our Computer Graphics Project Page</h1>
+                        <p style="color: #555555; font-weight: bold;">Qi Ma & Jiayi Sun</p>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+                                    Welcome to our computer graphics project page. 
+                                    We are <b>Qi Ma</b> and <b>Jiayi Sun</b> and this is the documentation page for the project in our <b>Computer Graphics course at ETH Zürich</b> (Autumn semester 2024).
+                                    <br/>
+                                    Below, you can see our motivational image. Please use the navigation to see all the different features we worked on.<br/>
+                                    Finally, have a look at our submission to the rendering competition.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">
+                                    Our motivational image, "Hourglass," captures the in-between moment of nature's transformation into the urban landscape.
+                                    The upper part depicts vanishing trees, while the lower part showcases a cityscape. The sand in the middle symbolizes the passage of time and the shift from nature to urbanization.
+                                
+                                    Inspired by this image, we aim to create a realistic rendering of a scene also utilizing an hourglass as the central element. The upper part of the hourglass will contain a melting iceberg, 
+                                    and the lower part will be a modern cityscape. The melting icewater will flow through the hourglass, and there will be the striking contrast of a stormy industrial scene outside of the window and a tranquil wooden interior,
+                                    embodying the in-between state of nature's retreat and the rise of urbanization.
+                                </p>
+                            </div>
+                        </div>
+                       
+                       
+                        
+                            <div >
+                                <img src="ref/motivation.jpeg" alt="Motivational image" class="img-motivation">
+                                
+                            </div>
+                        
+
+                        
+                            <div>
+                                <a href="http://xhslink.com/a/mUWpv3Ntr6WZ">Xiaohongshu - Hourglass, Bangbing Pan</a>
+                            </div>
+                        
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Thanks to html model from Copyright &copy; Jennifer Schürch &amp; Dano Roost, 2022</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/chart-area-demo.js"></script>
+        <script src="../resources/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="../resources/datatables-simple-demo.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="../resources/bootstrap.min.js"></script>
+        <script src="../resources/offcanvas.js"></script>
+        <script src="../resources/jquery.event.move.js"></script>
+        <script src="../resources/jquery.twentytwenty.js"></script>
+    </body>
+</html>

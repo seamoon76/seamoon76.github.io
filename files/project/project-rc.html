@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CG 2024</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="../resources/styles.css" rel="stylesheet" />
+        <link href="../resources/offcanvas.css" rel="stylesheet">
+        <link href="../resources/twentytwenty.css" rel="stylesheet" type="text/css" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        <style>
+        .img-final {
+            width: auto;          /* 宽度自动，根据高度调整 */
+            height: auto;         /* 高度自动，按比例缩放 */
+            max-width: 55%;      /* 最大宽度不能超过父容器 */
+            max-height: 55%;     /* 最大高度不能超过父容器 */
+            display: block;       /* 避免多余的空白 */
+            margin: 0 auto;       /* 居中显示 */
+        }
+        </style>
+
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">Computer Graphics 2024 </a>
+            &emsp;
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">RC Submission</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-arrow-circle-left"></i></div>
+                                Back
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4" id="Updated Files">Rendering Competition Submission</h1>
+                        <p style="color: #555555; font-weight: bold;">Qi Ma & Jiayi Sun</p>
+
+                        <p>The image captures an iceberg gradually transforming into urban skyscrapers within an hourglass, as well as the striking contrast of 
+                            a stormy industrial scene outside and a tranquil wooden interior, embodying the concept of "in between"—a balance and transition between nature and modernization, the past and the future.
+                        </p>
+                        <p> This image was rendered with 256 samples per pixel (spp) and processed with NL-means denoising for post-processing. </p> 
+                           
+                        <p>The hourglass frame uses the Disney BSDF to simulate the metallic material. The meshes for the iceberg, melting water, and urban buildings were modeled(mesh modeling), with image textures applied to simulate surface details. </p>    
+                        
+                        <p>
+                            The ice water droplets in the center of the hourglass were created using object instancing. The crane visible outside the window is illuminated using an environment map emitter, while the dark clouds are rendered using heterogeneous participating media. Additionally, directional light was used to provide extra illumination for the scene.
+                        </p>
+                    
+                        <div>
+                            <img src="solution/final_denoised.png" alt="Preview Rendering Competition - 256ssp" class="img-final">
+                        </div>
+
+
+
+                        <h5>Resources for project scene:</h5>
+
+                        <ul>
+                            <li>environment map: <a href="https://polyhaven.com/a/freight_station">Sergej Majboroda@polyhaven</a></li>
+                            <li>urban buildings: <a href="https://free3d.com/3d-model/sci-fi-tropical-city-25746.html">Herminio Nieves@2013 city model</a></li>
+                            <li>iceberg: <a href="https://taobao.com">taobao</a></li>
+                            <li>cloud: <a href="https://www.openvdb.org/download/">openvdb</a></li>
+                            <li>hourglass: <a href="https://sketchfab.com/3d-models/hourglass-a453e90d47b74260b5e5ccd5a965fe3e">• Less •@sketchfab</a></li>
+                            <li>indoor scene blender:  <a href="https://www.blendswap.com/blend/12725">Wig42@Blendswap</a></li>
+                        </ul>
+
+                
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/chart-area-demo.js"></script>
+        <script src="../resources/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="../resources/datatables-simple-demo.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="../resources/bootstrap.min.js"></script>
+        <script src="../resources//offcanvas.js"></script>
+        <script src="../resources/jquery.event.move.js"></script>
+        <script src="../resources/jquery.twentytwenty.js"></script>
+        <script>
+            $(window).load(function(){$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.5});});
+        </script>
+    </body>
+</html>

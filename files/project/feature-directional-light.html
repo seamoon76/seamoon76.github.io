@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CG 2024</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="../resources/styles.css" rel="stylesheet" />
+        <link href="../resources/offcanvas.css" rel="stylesheet">
+        <link href="../resources/twentytwenty.css" rel="stylesheet" type="text/css" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        <style>
+            code {
+                background-color: #f5f5f5; /* 浅灰色背景 */
+                border: 1px solid #ddd; /* 灰色边框 */
+                border-radius: 4px; /* 圆角 */
+                padding: 2px 4px; /* 内边距 */
+                font-family: monospace; /* 等宽字体 */
+                font-size: 90%; /* 字体稍小一些 */
+                color: #333; /* 字体颜色 */
+            }
+        </style>
+        <style>
+            .container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 20vh;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
+          </style>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">Computer Graphics 2024 </a>
+            &emsp;
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Simple Extra Emitters: Directional Light</div>
+                            <a class="nav-link" href="#Updated Files">Updated Files</a>
+                            <a class="nav-link" href="#Implementation">Implementation</a>
+                            <a class="nav-link" href="#Validation">Validation</a>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-arrow-circle-left"></i></div>
+                                Back
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4" id="Updated Files">Simple Extra Emitters: Directional Light</h1>
+                        <p style="color: #555555; font-weight: bold;">Qi Ma</p>
+                        <h2 class="mt-4" id="Updated Files">Updated Files</h2>
+                        <ul>
+                            <li>include/nori/emitter.h</li>
+                            <li>src/directional.cpp</li>
+                            <li>src/path_mats.cpp</li>
+                            <li>src/path_mis.h</li>
+                            <li>src/vol_path_mis.cpp</li>
+                        </ul>
+
+                        <h2 class="mt-4" id="Implementation">Implementation</h2>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">Directional light is a type of light source that emits light in a specific direction with uniform intensity that does not attenuate over distance.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">For the implementation of the <code>directional</code> light, we created a new class <code>DirectionalEmitter</code> in the <code>directional.cpp</code> file.  
+                                The <code>DirectionalEmitter</code> class inherits from the <code>Emitter</code> class and includes properties for the light's intensity and direction.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">The core functionality is in the <code>sample</code> method, which calculates the projection of the distance from the reference point to the light source projection center onto the light source direction.
+                                The light source projection center is estimated from the world center and world radius based on the scene or be specified in the scene xml file. 
+                                It also sets up a shadow ray for visibility testing and assigns values to key fields in the <code>EmitterQueryRecord</code>, including the light position, direction, and normal.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="lead">The <code>eval</code> and <code>pdf</code> methods return fixed values (0 and 1, respectively), reflecting the delta nature of the light source.</p>
+                            </div>
+                        </div>
+                        <h2 class="mt-4" id="Validation">Validation</h2>
+
+                        <p class="lead">We compared the directional light with the same functionality in Mitsuba. The direction of the light and its radiance were adjusted to validate the correctness of the implementation.</p>
+
+                        <h3 class="mt-4">Comparison 1: Uniform Intensity</h3>
+
+                        <ul>
+                            <li>Intensity: (5, 5, 5)</li>
+                            <li>Direction: (0.401387, -0.444440, -0.800851)</li>
+                            <li>Samples Per Pixel (SPP): 256</li>
+                        </ul>
+
+                        <div class="twentytwenty-container">
+                            <img src="ref/directional_mistuba_uniform_intensity.png" alt="Mitsuba" class="img-responsive">
+                            <img src="solution/directional_uniform_intensity.png" alt="Our (Path MIS)" class="img-responsive">
+                        </div>
+
+                        <h3 class="mt-4">Comparison 2: Non-Uniform Intensity(Color)</h3>
+
+                        <ul>
+                            <li>Intensity: (5, 4, 3)</li>
+                            <li>Direction: (0.401387, -0.444440, -0.800851)</li>
+                            <li>Samples Per Pixel (SPP): 256</li>
+                        </ul>
+
+                        <div class="twentytwenty-container">
+                            <img src="ref/directional_mistuba_non_uniform_intensity.png" alt="Mitsuba" class="img-responsive">
+                            <img src="solution/directional_non_uniform_intensity.png" alt="Our (Path MIS)" class="img-responsive">
+                        </div>
+
+                        <h3 class="mt-4">Comparison 3: Change Direction</h3>
+
+                        <ul>
+                            <li>Intensity: (5, 5, 5)</li>
+                            <li>Direction: (0.849596, -0.343943, 0.399863)</li>
+                            <li>Samples Per Pixel (SPP): 256</li>
+                        </ul>
+
+                        <div class="twentytwenty-container">
+                            <img src="ref/directional_mistuba_change_direction.png" alt="Mitsuba" class="img-responsive">
+                            <img src="solution/directional_change_direction.png" alt="Our (Path MIS)" class="img-responsive">
+                        </div>
+
+                        <h3 class="mt-4">Conclusion</h3>
+
+                        <p class="lead">Under all test cases, our implementation of the directional light source produces results
+                             consistent with the reference images generated by Mitsuba, validating the correctness of our implementation.</p>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/chart-area-demo.js"></script>
+        <script src="../resources/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="../resources/datatables-simple-demo.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="../resources/bootstrap.min.js"></script>
+        <script src="../resources//offcanvas.js"></script>
+        <script src="../resources/jquery.event.move.js"></script>
+        <script src="../resources/jquery.twentytwenty.js"></script>
+        <script>
+            $(window).load(function(){$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.5});});
+        </script>
+    </body>
+</html>

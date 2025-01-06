@@ -106,6 +106,19 @@ Working Experience
 </p>  
 </div>
 
+Project
+------
+<div>
+<img style="float: left; width: 75px" src="https://seamoon76.github.io/images/nori.png">
+<img style="float: left" src="https://seamoon76.github.io/images/border_row1.png" width="10px">
+<p style="line-height:125%">
+  <font size="4"><b>Computer Graphics 2024</b><br></font> 
+  <font size="2">October 2024 - December 2023<br></font> 
+  <font size="2">Volumetric Shader Based on Nori2</font>
+  <a href="https://seamoon76.github.io/files/project/index.html">Report</a> 
+</p>  
+</div>
+
 
 <!-- ############## -->
 <!-- honors and awards -->

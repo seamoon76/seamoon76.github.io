@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CG 2024</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="../resources/styles.css" rel="stylesheet" />
+        <link href="../resources/offcanvas.css" rel="stylesheet">
+        <link href="../resources/twentytwenty.css" rel="stylesheet" type="text/css" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        <style>
+            code {
+                background-color: #f5f5f5; /* 浅灰色背景 */
+                border: 1px solid #ddd; /* 灰色边框 */
+                border-radius: 4px; /* 圆角 */
+                padding: 2px 4px; /* 内边距 */
+                font-family: monospace; /* 等宽字体 */
+                font-size: 90%; /* 字体稍小一些 */
+                color: #333; /* 字体颜色 */
+            }
+            .filename {
+                font-family: monospace; /* 等宽字体 */
+                font-size: 90%; /* 字体稍小 */
+                color: #333; /* 字体颜色 */
+            }
+        </style>
+        
+
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">Computer Graphics 2024 </a>
+            &emsp;
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Stratified Sampling</div>
+                            <a class="nav-link" href="#Updated Files">Updated Files</a>
+                            <a class="nav-link" href="#Implementation">Implementation</a>
+                            <a class="nav-link" href="#Validation">Validation</a>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-arrow-circle-left"></i></div>
+                                Back
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4" id="Updated Files">Stratified Sampling</h1>
+                        <p style="color: #555555; font-weight: bold;">Jiayi Sun</p>
+
+                        <h2 class="mt-4" id="Updated Files">Updated Files</h2>
+                        <ul>
+                            <li><span class="filename">src/stratified.cpp</span></li>
+                            <li><span class="filename">src/render.cpp</span></li>
+                        </ul>
+
+                        <h2 class="mt-4" id="Implementation">Implementation</h2>
+
+                        <p>The stratified sampling is implemented based on <a href="https://pbr-book.org/3ed-2018/Sampling_and_Reconstruction/Stratified_Sampling"> PBRT 7.3 Stratified Sampling</a>. We divide each pixel into a grid of subpixels and sample one point in each subpixel. 
+                            The <code>Stratified</code> class is inherited from the <code>Sampler</code> class. The <code>m_sampleCount</code> parameter holds the total number of samples, adjusted to fit the grid resolution. Also we add <code>m_maxDim</code> parameter, which controls the maximum dimensions for the precomputed arrays. Then <code>m_jitter</code> controls whether samples within each cell are perturbed.
+                        </p>
+
+                        <p>If the sampling dimension exceeds the specified <code>m_maxDim</code>, the stratified sampler falls back to generating purely random samples.
+                        </p>
+
+                        
+                        <h2 class="mt-4" id="Validation">Validation</h2>
+
+                        <p>We compare the rendering results of stratified sampling with the original independent sampling. We use a modified Cornell box scene with 4 integrators: <code>path_mats</code>, <code>path_mis</code>, <code>vol_path_mats</code>, and <code>vol_path_mis</code>. We set the spp to 32 and 512 for each integrator to observe the differences.
+                        </p>
+
+                        <p>For <code>path_mats</code> and <code>vol_path_mats</code>, stratified sampling obviously reduced noise at both 32 spp, where Monte Carlo integration had not yet converged, and 512 spp, where the rendering was nearly converged. 
+                        </p>
+
+                        <p>For <code>path_mis</code> and <code>vol_path_mis</code>, while importance sampling already provides efficient sampling and lower noise, we can still notice the benefits of stratified sampling. In <code>path_mis</code>, the specular parts at the bottom of dielectric sphere and on the ground appear sharper with stratified sampling. For <code>vol_path_mis</code>, stratified sampling further reduces noise on the walls surrounding the cloud as well as the shading part on the ground.
+                        </p>
+
+                        <h5 class="mt-4">32 ssp for path integrators</h5>
+                        
+                        <div class="twentytwenty-container">
+                            <img src="ref/test_independent_mats_32.png" alt="independent, mats" class="img-responsive">
+                            <img src="ref/test_independent_mis_32.png" alt="independent, mis" class="img-responsive">
+                            <img src="solution/test_stratified_mats_32.png" alt="stratified, mats" class="img-responsive">
+                            <img src="solution/test_stratified_mis_32.png" alt="stratified, mis" class="img-responsive">
+                        </div>
+
+                        <h5 class="mt-4">512 ssp for path integrators</h5>
+
+                        <div class="twentytwenty-container">
+                            <img src="ref/test_independent_mats_512.png" alt="independent, mats" class="img-responsive">
+                            <img src="ref/test_independent_mis_512.png" alt="independent, mis" class="img-responsive">
+                            <img src="solution/test_stratified_mats_512.png" alt="stratified, mats" class="img-responsive">
+                            <img src="solution/test_stratified_mis_512.png" alt="stratified, mis" class="img-responsive">
+                        </div>
+
+                        <h5 class="mt-4">32 ssp for volume path integrators</h5>
+                        
+                        <div class="twentytwenty-container">
+                            <img src="ref/test_independent_vol_mats_32.png" alt="independent, mats" class="img-responsive">
+                            <img src="ref/test_independent_vol_mis_32.png" alt="independent, mis" class="img-responsive">
+                            <img src="solution/test_stratified_vol_mats_32.png" alt="stratified, mats" class="img-responsive">
+                            <img src="solution/test_stratified_vol_mis_32.png" alt="stratified, mis" class="img-responsive">
+                        </div>
+
+                        <h5 class="mt-4">512 ssp for volume path integrators</h5>
+                        
+                        <div class="twentytwenty-container">
+                            <img src="ref/test_independent_vol_mats_512.png" alt="independent, mats" class="img-responsive">
+                            <img src="ref/test_independent_vol_mis_512.png" alt="independent, mis" class="img-responsive">
+                            <img src="solution/test_stratified_vol_mats_512.png" alt="stratified, mats" class="img-responsive">
+                            <img src="solution/test_stratified_vol_mis_512.png" alt="stratified, mis" class="img-responsive">
+                        </div>
+                    
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="../resources/chart-area-demo.js"></script>
+        <script src="../resources/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="../resources/datatables-simple-demo.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="../resources/bootstrap.min.js"></script>
+        <script src="../resources//offcanvas.js"></script>
+        <script src="../resources/jquery.event.move.js"></script>
+        <script src="../resources/jquery.twentytwenty.js"></script>
+        <script>
+            $(window).load(function(){$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.5});});
+        </script>
+    </body>
+</html>
