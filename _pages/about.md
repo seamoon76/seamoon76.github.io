@@ -115,9 +115,9 @@ Project
   <font size="4"><b>Computer Graphics 2024</b><br></font> 
   <font size="2">October 2024 - December 2023<br></font> 
   <font size="2">Volumetric Shader Based on Nori2</font>
-  
+
   <font size="2">
-      <a href="https://seamoon76.github.io/files/project/index2.html">Report</a> 
+      <a href="https://seamoon76.github.io/files/project/index.html">Report</a> 
     </font>
 </p>  
 </div>
