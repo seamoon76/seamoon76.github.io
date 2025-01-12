@@ -33,7 +33,7 @@ Education Experience
 <img style="float: left; width: 75px" src="https://seamoon76.github.io/images/ethz_logo_black.png">
 <img style="float: left" src="https://seamoon76.github.io/images/border_row1.png" width="10px">
 <p style="line-height:125%">
-  <font size="4"><b>ETH, Zurich, Switherland</b><br></font> 
+  <font size="4"><b>ETH, Zurich, Switzerland</b><br></font> 
   <font size="2">September 2024 - July 2026(expected) <br></font> 
   <font size="2">MSc in Computer Science at <a href="https://inf.ethz.ch/">Department of Computer Science</a><br></font>
 </p>  
