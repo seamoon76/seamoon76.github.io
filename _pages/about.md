@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a master student at [ETH Zurich](https://ethz.ch/en.html), advised by Prof. [Otmar Hilliges](https://ait.ethz.ch/people/hilliges) and Dr. [Jie Song](https://ait.ethz.ch/people/song). I received my bachelor's degree in 2024 at [Tsinghua University](https://www.tsinghua.edu.cn/en/), adviced by Prof. [Feng Xu](http://xufeng.site/).
+I am a master student at [ETH Zurich](https://ethz.ch/en.html), advised by Prof. [Otmar Hilliges](https://ait.ethz.ch/people/hilliges). I received my bachelor's degree in 2024 at [Tsinghua University](https://www.tsinghua.edu.cn/en/), adviced by Prof. [Feng Xu](http://xufeng.site/).
 In 2023, I worked with Prof. [Karen Liu](https://tml.stanford.edu/people/karen-liu) at [Stanford University](https://www.stanford.edu/).
 
 My research interest lies at the intersection of computer vision and computer graphics, including optical motion capture, vision/sensor based motion capture, and character animation.
