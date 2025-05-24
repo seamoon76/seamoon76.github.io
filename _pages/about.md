@@ -96,7 +96,9 @@ Working Experience
 <img style="float: left; width: 75px" src="https://seamoon76.github.io/images/xiaomi.png">
 <img style="float: left" src="https://seamoon76.github.io/images/border_row1.png" width="10px">
 <p style="line-height:125%">
-  <font size="4"><b>Xiaomi, Beijing, China</b><br></font> 
+  <font size="4">
+      <b><a href="https://www.mi.com/global" target="_blank" style="text-decoration: none; color: inherit;">Xiaomi</a>, Beijing, China</b><br>
+    </font> 
   <font size="2">June 2023 - July 2023<br></font> 
   <font size="2">Software Engineer at Xiaomi Technical Committee<br></font>
   <font size="2"> IoT platform end-side model deployment and development</font>
