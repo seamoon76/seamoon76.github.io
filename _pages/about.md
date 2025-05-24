@@ -8,10 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-I am a master student at [ETH Zurich](https://ethz.ch/en.html), advised by Prof. [Otmar Hilliges](https://ait.ethz.ch/people/hilliges). I received my bachelor's degree in 2024 at [Tsinghua University](https://www.tsinghua.edu.cn/en/), adviced by Prof. [Feng Xu](http://xufeng.site/).
-In 2023, I worked with Prof. [Karen Liu](https://tml.stanford.edu/people/karen-liu) at [Stanford University](https://www.stanford.edu/).
+I am a master student at [ETH Zurich](https://ethz.ch/en.html). I received my bachelor's degree in 2024 at [Tsinghua University](https://www.tsinghua.edu.cn/en/), adviced by Prof. [Feng Xu](http://xufeng.site/).
 
-My research interest lies at the intersection of computer vision and computer graphics, including optical motion capture, vision/sensor based motion capture, and character animation.
+I am interested in computer graphics, character animation and motion capture.
 
 <!-- ############## -->
 <!-- news -->
@@ -19,9 +18,7 @@ My research interest lies at the intersection of computer vision and computer gr
 
 News
 ------
-* [2024.6] I was awarded as the Outstanding Graduates of Tsinghua University(top 2%,highest honor for bachelor's degree graduates of THU).
-* [2023.12] I was awarded the [SenseTime](https://www.sensetime.com/cn) Scholarship (30 undergraduates major in AI nationwide per year).
-* [2023.8] One paper accepted to SIGGRAPH ASIA'2023. 
+* [2025.05] I was accepted as an intern by Tencent [LIGHTSPEED STUDIOS](https://www.lightspeed-studios.com/).
 
 <!-- ############## -->
 <!-- education -->
