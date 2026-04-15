@@ -79,7 +79,7 @@ Shaohua Pan, <b>Qi Ma</b>, Xinyu Yi, Weifeng Hu, Xiong Wang, Xingkang Zhou, Jiju
 ## Experience
 
 <div>
-<img style="float:left; width:75px" src="https://seamoon76.github.io/images/Tencent_logo_2017.svg.png">
+<img style="float:left; width:75px; margin-top:30px;" src="https://seamoon76.github.io/images/Tencent_logo_2017.svg.png">
 <img style="float:left" src="https://seamoon76.github.io/images/border_row1.png" width="10px">
 <p style="line-height:125%">
 <font size="4">
