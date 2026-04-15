@@ -87,7 +87,7 @@ Shaohua Pan, <b>Qi Ma</b>, Xinyu Yi, Weifeng Hu, Xiong Wang, Xingkang Zhou, Jiju
 </font>
 <font size="2">Jun 2025 – Oct 2025<br></font>
 <font size="2">UE Game Engine Development Engineer Intern, LightSpeed Studios<br></font>
-<font size="2">Developed UE5-based features for <i>Game for Peace</i>.</font>
+<font size="2">Developed UE5-based features for <i>Game for Peace(和平精英)</i>.</font>
 </p>
 </div>
 
