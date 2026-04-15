@@ -106,7 +106,7 @@ Shaohua Pan, <b>Qi Ma</b>, Xinyu Yi, Weifeng Hu, Xiong Wang, Xingkang Zhou, Jiju
 
 ---
 
-## Projects
+<!-- ## Projects
 
 <div>
 <img style="float:left; width:75px" src="https://seamoon76.github.io/images/nori.png">
@@ -119,7 +119,7 @@ Shaohua Pan, <b>Qi Ma</b>, Xinyu Yi, Weifeng Hu, Xiong Wang, Xingkang Zhou, Jiju
 </p>
 </div>
 
----
+--- -->
 
 ## Honors & Awards
 
