@@ -8,17 +8,17 @@ redirect_from:
   - /about.html
 ---
 
-I am a master student at [ETH Zurich](https://ethz.ch/en.html). I received my bachelor's degree in 2024 at [Tsinghua University](https://www.tsinghua.edu.cn/en/), adviced by Prof. [Feng Xu](http://xufeng.site/).
+I am a master student at [ETH Zurich](https://ethz.ch/en.html). I am working on my thesis at [SIP lab](https://siplab.org/), adviced by [Prof. Dr. Christian Holz](https://www.christianholz.net/) and [Jiaxi Jiang](https://jiaxi-jiang.com/). I received my bachelor's degree in 2024 at [Tsinghua University](https://www.tsinghua.edu.cn/en/), adviced by Prof. [Feng Xu](http://xufeng.site/).
 
-I am interested in computer graphics, character animation and motion capture.
+I am interested in computer graphics, character animation and motion capture. Now I am working on egocentric human and object pose estimation.
 
 <!-- ############## -->
 <!-- news -->
 <!-- ############## -->
-
+<!-- 
 News
-------
-* [2025.05] I was accepted as an intern by Tencent [LIGHTSPEED STUDIOS](https://www.lightspeed-studios.com/).
+------ -->
+<!-- * [2025.05] I was accepted as an intern by Tencent [LIGHTSPEED STUDIOS](https://www.lightspeed-studios.com/). -->
 
 <!-- ############## -->
 <!-- education -->
@@ -31,7 +31,7 @@ Education Experience
 <img style="float: left" src="https://seamoon76.github.io/images/border_row1.png" width="10px">
 <p style="line-height:125%">
   <font size="4"><b>ETH, Zurich, Switzerland</b><br></font> 
-  <font size="2">September 2024 - July 2026(expected) <br></font> 
+  <font size="2">September 2024 - August 2026(expected) <br></font> 
   <font size="2">MSc in Computer Science at <a href="https://inf.ethz.ch/">Department of Computer Science</a><br></font>
 </p>  
 </div>
@@ -92,6 +92,19 @@ Publications
 
 Working Experience
 ------
+<div>
+<img style="float: left; width: 75px" src="https://seamoon76.github.io/images/Tencent_logo_2017.svg.png">
+<!-- <img style="float: left" src="https://seamoon76.github.io/images/Tencent_logo_2017.svg.png" width="10px"> -->
+<p style="line-height:125%">
+  <font size="4">
+      <b><a href="https://www.mi.com/global" target="_blank" style="text-decoration: none; color: inherit;">Tencent</a>, Shenzhen, China</b><br>
+    </font> 
+  <font size="2">June 2025 - October 2025<br></font> 
+  <font size="2">UE game engine development engineer at LightSpeed studios<br></font>
+  <font size="2"> Develop more UE5-based features for Game for Peace(和平精英) game.</font>
+</p>  
+</div>
+
 <div>
 <img style="float: left; width: 75px" src="https://seamoon76.github.io/images/xiaomi.png">
 <img style="float: left" src="https://seamoon76.github.io/images/border_row1.png" width="10px">
