@@ -12,7 +12,7 @@ I received my Master's degree in Computer Science from [ETH Zurich](https://ethz
 
 Previously, I received my Bachelor's degree in Software Engineering from [Tsinghua University](https://www.tsinghua.edu.cn/en/) in 2024, where I was advised by Prof. [Feng Xu](http://xufeng.site/).
 
-My research interests lie in computer graphics, rendering, character animation, and motion capture. My undergraduate thesis focused on real-time full-body motion capture using IMUs from mobile and wearable devices, while my master's thesis explored egocentric hand-object interaction reconstruction with smart glasses. I am currently working on rendering performance optimization for game engines.
+My research interests are in computer graphics, with a focus on rendering, character animation, and motion capture. My undergraduate thesis explored real-time full-body motion capture using IMUs from smartphones and smartwatches, while my master's thesis focused on egocentric hand-object interaction reconstruction using smart glasses. I am currently working on rendering performance optimization for game engines.
 
 ---
 
