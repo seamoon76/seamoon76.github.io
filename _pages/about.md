@@ -8,11 +8,11 @@ redirect_from:
   - /about.html
 ---
 
-I am a Master's student in Computer Science at [ETH Zurich](https://ethz.ch/en.html). I am currently working on my thesis at the [SIP Lab](https://siplab.org/), advised by [Prof. Dr. Christian Holz](https://www.christianholz.net/) and [Jiaxi Jiang](https://jiaxi-jiang.com/).
+I received my Master's degree in Computer Science from [ETH Zurich](https://ethz.ch/en.html) in September 2026. During my studies, I worked on my thesis at the [SIP Lab](https://siplab.org/), advised by [Prof. Dr. Christian Holz](https://www.christianholz.net/) and [Jiaxi Jiang](https://jiaxi-jiang.com/).
 
 Previously, I received my Bachelor's degree in Software Engineering from [Tsinghua University](https://www.tsinghua.edu.cn/en/) in 2024, where I was advised by Prof. [Feng Xu](http://xufeng.site/).
 
-My research interests lie in computer graphics, character animation, and motion capture. I am currently focusing on egocentric human and object pose estimation.
+My research interests lie in computer graphics, rendering, character animation, and motion capture. My undergraduate thesis focused on real-time full-body motion capture using IMUs from mobile and wearable devices, while my master's thesis explored egocentric hand-object interaction reconstruction with smart glasses. I am currently working on rendering performance optimization for game engines.
 
 ---
 
@@ -23,7 +23,7 @@ My research interests lie in computer graphics, character animation, and motion 
 <img style="float:left" src="https://seamoon76.github.io/images/border_row1.png" width="10px">
 <p style="line-height:125%">
 <font size="4"><b>ETH Zurich, Switzerland</b><br></font>
-<font size="2">Sep 2024 – Aug 2026 (expected)<br></font>
+<font size="2">Sep 2024 – Sep 2026<br></font>
 <font size="2">M.Sc. in Computer Science, <a href="https://inf.ethz.ch/">Department of Computer Science</a></font>
 </p>
 </div>
@@ -83,11 +83,24 @@ Shaohua Pan, <b>Qi Ma</b>, Xinyu Yi, Weifeng Hu, Xiong Wang, Xingkang Zhou, Jiju
 <img style="float:left" src="https://seamoon76.github.io/images/border_row1.png" width="10px">
 <p style="line-height:125%">
 <font size="4">
-<b><a href="https://www.tencent.com/en-us/" target="_blank" style="text-decoration:none; color:inherit;">Tencent</a>, Shenzhen, China</b><br>
+<b><a href="https://www.tencent.com/en-us/" target="_blank" style="text-decoration:none; color:inherit;">Tencent Games</a>, Shenzhen, China</b><br>
+</font>
+<font size="2">Sep 2026 – Present<br></font>
+<font size="2">Game Engine Engineer, LightSpeed Studios, Game for Peace Project<br></font>
+<font size="2">Working on performance optimization for <i>Game for Peace (和平精英)</i>.</font>
+</p>
+</div>
+
+<div>
+<img style="float:left; width:75px; margin-top:30px;" src="https://seamoon76.github.io/images/Tencent_logo_2017.svg.png">
+<img style="float:left" src="https://seamoon76.github.io/images/border_row1.png" width="10px">
+<p style="line-height:125%">
+<font size="4">
+<b><a href="https://www.tencent.com/en-us/" target="_blank" style="text-decoration:none; color:inherit;">Tencent Games</a>, Shenzhen, China</b><br>
 </font>
 <font size="2">Jun 2025 – Oct 2025<br></font>
 <font size="2">UE Game Engine Development Engineer Intern, LightSpeed Studios<br></font>
-<font size="2">Developed UE5-based features for <i>Game for Peace(和平精英)</i>.</font>
+<font size="2">Developed UE5-based features for <i>Game for Peace (和平精英)</i>.</font>
 </p>
 </div>
 
