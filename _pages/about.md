@@ -12,6 +12,8 @@ I received my Master's degree in Computer Science from [ETH Zurich](https://ethz
 
 Previously, I received my Bachelor's degree in Software Engineering from [Tsinghua University](https://www.tsinghua.edu.cn/en/) in 2024, where I was advised by Prof. [Feng Xu](http://xufeng.site/).
 
+During my undergraduate studies, I spent seven months as a visiting student researcher at [Stanford University](https://www.stanford.edu/), working with [Prof. C. Karen Liu](https://tml.stanford.edu/) and [Tom Van Wouwe](https://nmbl.stanford.edu/people/tom-van-wouwe) at [The Movement Lab](https://tml.stanford.edu/) on automatic marker labeling for motion capture data.
+
 My research interests are in computer graphics, with a focus on rendering, character animation, and motion capture. My undergraduate thesis explored real-time full-body motion capture using IMUs from smartphones and smartwatches, while my master's thesis focused on egocentric hand-object interaction reconstruction using smart glasses. I am currently working on rendering performance optimization for game engines.
 
 ---
@@ -36,6 +38,17 @@ My research interests are in computer graphics, with a focus on rendering, chara
 <font size="2">Sep 2020 – Jul 2024<br></font>
 <font size="2">B.S. in Software Engineering, <a href="https://www.thss.tsinghua.edu.cn/en/">School of Software</a><br></font>
 <font size="2">GPA: 3.93/4.00, Rank: 4/91</font>
+</p>
+</div>
+<div style="height:20px;"></div>
+<div>
+<img style="float:left; width:75px" src="https://seamoon76.github.io/images/stanford.png">
+<img style="float:left" src="https://seamoon76.github.io/images/border_row1.png" width="10px">
+<p style="line-height:125%">
+<font size="4"><b>Stanford University, Stanford, CA, USA</b><br></font>
+<font size="2">Jul 2023 – Jan 2024<br></font>
+<font size="2">Visiting Student Researcher, <a href="https://tml.stanford.edu/">The Movement Lab</a><br></font>
+<font size="2">Automatic marker labeling for motion capture data</font>
 </p>
 </div>
 
@@ -101,6 +114,19 @@ Shaohua Pan, <b>Qi Ma</b>, Xinyu Yi, Weifeng Hu, Xiong Wang, Xingkang Zhou, Jiju
 <font size="2">Jun 2025 – Oct 2025<br></font>
 <font size="2">UE Game Engine Development Engineer Intern, LightSpeed Studios<br></font>
 <font size="2">Developed UE5-based features for <i>Game for Peace (和平精英)</i>.</font>
+</p>
+</div>
+
+<div>
+<img style="float:left; width:75px; margin-top:30px;" src="https://seamoon76.github.io/images/stanford.png">
+<img style="float:left" src="https://seamoon76.github.io/images/border_row1.png" width="10px">
+<p style="line-height:125%">
+<font size="4">
+<b><a href="https://www.stanford.edu/" target="_blank" style="text-decoration:none; color:inherit;">Stanford University</a>, Stanford, CA, USA</b><br>
+</font>
+<font size="2">Jul 2023 – Jan 2024<br></font>
+<font size="2">Visiting Student Researcher, <a href="https://tml.stanford.edu/">The Movement Lab</a><br></font>
+<font size="2">Worked on automatic marker labeling for motion capture data, co-advised by <a href="https://tml.stanford.edu/">Prof. C. Karen Liu</a> and <a href="https://nmbl.stanford.edu/people/tom-van-wouwe">Tom Van Wouwe</a>.</font>
 </p>
 </div>
 
